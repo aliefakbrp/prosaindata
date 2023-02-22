@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crawlling Twitter dan Web &#8212; Data Mining</title>
+    <title>Crawlling Twitter dan Web &#8212; Proyek Sain Data</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logodatamining.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Data Mining</h1>
+      <h1 class="site-logo" id="site-title">Proyek Sain Data</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -403,139 +403,59 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Twint
-  Downloading twint-2.1.20.tar.gz (31 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
-Requirement already satisfied: aiohttp in /usr/local/lib/python3.8/dist-packages (from Twint) (3.8.4)
-Collecting aiodns
-  Downloading aiodns-3.0.0-py3-none-any.whl (5.0 kB)
-Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-packages (from Twint) (4.6.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting cchardet
-  Downloading cchardet-2.1.7-cp38-cp38-manylinux2010_x86_64.whl (265 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/266.0 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">266.0/266.0 KB</span> <span class=" -Color -Color-Red">14.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting elasticsearch
-  Downloading elasticsearch-8.6.2-py3-none-any.whl (385 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/385.4 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">385.4/385.4 KB</span> <span class=" -Color -Color-Red">27.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: pysocks in /usr/local/lib/python3.8/dist-packages (from Twint) (1.7.1)
-Requirement already satisfied: pandas in /usr/local/lib/python3.8/dist-packages (from Twint) (1.3.5)
-Collecting aiohttp_socks
-  Downloading aiohttp_socks-0.8.0-py3-none-any.whl (9.4 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting schedule
-  Downloading schedule-1.1.0-py2.py3-none-any.whl (10 kB)
+Requirement already satisfied: Twint in /usr/local/lib/python3.8/dist-packages (2.1.20)
 Requirement already satisfied: geopy in /usr/local/lib/python3.8/dist-packages (from Twint) (1.17.0)
-Collecting fake-useragent
-  Downloading fake_useragent-1.1.1-py3-none-any.whl (50 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/50.4 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">50.4/50.4 KB</span> <span class=" -Color -Color-Red">5.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting googletransx
-  Downloading googletransx-2.4.2.tar.gz (13 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pycares&gt;=4.0.0
-  Downloading pycares-4.3.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (288 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/289.0 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">289.0/289.0 KB</span> <span class=" -Color -Color-Red">23.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: frozenlist&gt;=1.1.1 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (1.3.3)
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-packages (from Twint) (4.6.3)
+Requirement already satisfied: cchardet in /usr/local/lib/python3.8/dist-packages (from Twint) (2.1.7)
+Requirement already satisfied: elasticsearch in /usr/local/lib/python3.8/dist-packages (from Twint) (8.6.2)
+Requirement already satisfied: pysocks in /usr/local/lib/python3.8/dist-packages (from Twint) (1.7.1)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.8/dist-packages (from Twint) (3.8.4)
+Requirement already satisfied: pandas in /usr/local/lib/python3.8/dist-packages (from Twint) (1.3.5)
+Requirement already satisfied: fake-useragent in /usr/local/lib/python3.8/dist-packages (from Twint) (1.1.1)
+Requirement already satisfied: googletransx in /usr/local/lib/python3.8/dist-packages (from Twint) (2.4.2)
+Requirement already satisfied: aiodns in /usr/local/lib/python3.8/dist-packages (from Twint) (3.0.0)
+Requirement already satisfied: schedule in /usr/local/lib/python3.8/dist-packages (from Twint) (1.1.0)
+Requirement already satisfied: aiohttp-socks in /usr/local/lib/python3.8/dist-packages (from Twint) (0.8.0)
+Requirement already satisfied: pycares&gt;=4.0.0 in /usr/local/lib/python3.8/dist-packages (from aiodns-&gt;Twint) (4.3.0)
+Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (21.4.0)
 Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (4.0.2)
 Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (6.0.4)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (1.8.2)
 Requirement already satisfied: charset-normalizer&lt;4.0,&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (3.0.1)
-Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (21.4.0)
+Requirement already satisfied: frozenlist&gt;=1.1.1 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (1.3.3)
 Requirement already satisfied: aiosignal&gt;=1.1.2 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (1.3.1)
-Collecting python-socks[asyncio]&lt;3.0.0,&gt;=2.0.0
-  Downloading python_socks-2.1.1-py3-none-any.whl (49 kB)
-?25l
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/49.7 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">49.7/49.7 KB</span> <span class=" -Color -Color-Red">5.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hCollecting elastic-transport&lt;9,&gt;=8
-  Downloading elastic_transport-8.4.0-py3-none-any.whl (59 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/59.5 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">59.5/59.5 KB</span> <span class=" -Color -Color-Red">6.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: importlib-resources&gt;=5.0 in /usr/local/lib/python3.8/dist-packages (from fake-useragent-&gt;Twint) (5.10.2)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-&gt;Twint) (1.8.2)
+Requirement already satisfied: python-socks[asyncio]&lt;3.0.0,&gt;=2.0.0 in /usr/local/lib/python3.8/dist-packages (from aiohttp-socks-&gt;Twint) (2.1.1)
+Requirement already satisfied: elastic-transport&lt;9,&gt;=8 in /usr/local/lib/python3.8/dist-packages (from elasticsearch-&gt;Twint) (8.4.0)
+Requirement already satisfied: importlib-resources&gt;=5.0 in /usr/local/lib/python3.8/dist-packages (from fake-useragent-&gt;Twint) (5.10.2)
 Requirement already satisfied: geographiclib&lt;2,&gt;=1.49 in /usr/local/lib/python3.8/dist-packages (from geopy-&gt;Twint) (1.52)
 Requirement already satisfied: requests in /usr/local/lib/python3.8/dist-packages (from googletransx-&gt;Twint) (2.25.1)
-Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;Twint) (1.21.6)
 Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;Twint) (2022.7.1)
+Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;Twint) (1.21.6)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;Twint) (2.8.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.8/dist-packages (from pandas-&gt;Twint) (2.8.2)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting urllib3&lt;2,&gt;=1.26.2
-  Downloading urllib3-1.26.14-py2.py3-none-any.whl (140 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/140.6 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">140.6/140.6 KB</span> <span class=" -Color -Color-Red">16.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: certifi in /usr/local/lib/python3.8/dist-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;Twint) (2022.12.7)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi in /usr/local/lib/python3.8/dist-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;Twint) (2022.12.7)
+Requirement already satisfied: urllib3&lt;2,&gt;=1.26.2 in /usr/local/lib/python3.8/dist-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;Twint) (1.26.14)
 Requirement already satisfied: zipp&gt;=3.1.0 in /usr/local/lib/python3.8/dist-packages (from importlib-resources&gt;=5.0-&gt;fake-useragent-&gt;Twint) (3.13.0)
 Requirement already satisfied: cffi&gt;=1.5.0 in /usr/local/lib/python3.8/dist-packages (from pycares&gt;=4.0.0-&gt;aiodns-&gt;Twint) (1.15.1)
 Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.8/dist-packages (from python-dateutil&gt;=2.7.3-&gt;pandas-&gt;Twint) (1.15.0)
 Requirement already satisfied: idna&gt;=2.0 in /usr/local/lib/python3.8/dist-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp-&gt;Twint) (2.10)
 Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests-&gt;googletransx-&gt;Twint) (4.0.0)
 Requirement already satisfied: pycparser in /usr/local/lib/python3.8/dist-packages (from cffi&gt;=1.5.0-&gt;pycares&gt;=4.0.0-&gt;aiodns-&gt;Twint) (2.21)
-Building wheels for collected packages: Twint, googletransx
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for Twint (setup.py) ... ?25l?25hdone
-  Created wheel for Twint: filename=twint-2.1.20-py3-none-any.whl size=33929 sha256=4578c9ed169a5c5fc752cc80bf76ea4345ecd008aa740dc810b82efaa6ddaa6b
-  Stored in directory: /root/.cache/pip/wheels/4e/80/ea/5b82b5140b7dec857ec0bbfe908193ebf2e5d7f2ebee297519
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for googletransx (setup.py) ... ?25l?25hdone
-  Created wheel for googletransx: filename=googletransx-2.4.2-py3-none-any.whl size=15968 sha256=60913ebedd5303f5abdb1e4ff7181518f89f3b0dd05470aacd116be8f35faf29
-  Stored in directory: /root/.cache/pip/wheels/6a/54/98/96b62f08dd73eca3147e36b5099d77c3f8fedc5472bb488167
-Successfully built Twint googletransx
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: python-socks, cchardet, urllib3, schedule, pycares, fake-useragent, elastic-transport, googletransx, elasticsearch, aiohttp_socks, aiodns, Twint
-  Attempting uninstall: urllib3
-    Found existing installation: urllib3 1.24.3
-    Uninstalling urllib3-1.24.3:
-      Successfully uninstalled urllib3-1.24.3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed Twint-2.1.20 aiodns-3.0.0 aiohttp_socks-0.8.0 cchardet-2.1.7 elastic-transport-8.4.0 elasticsearch-8.6.2 fake-useragent-1.1.1 googletransx-2.4.2 pycares-4.3.0 python-socks-2.1.1 schedule-1.1.0 urllib3-1.26.14
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Collecting snscrape
-  Downloading snscrape-0.5.0.20230113-py3-none-any.whl (69 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/69.2 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">69.2/69.2 KB</span> <span class=" -Color -Color-Red">3.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: lxml in /usr/local/lib/python3.8/dist-packages (from snscrape) (4.9.2)
+Requirement already satisfied: snscrape in /usr/local/lib/python3.8/dist-packages (0.5.0.20230113)
 Requirement already satisfied: pytz in /usr/local/lib/python3.8/dist-packages (from snscrape) (2022.7.1)
+Requirement already satisfied: filelock in /usr/local/lib/python3.8/dist-packages (from snscrape) (3.9.0)
+Requirement already satisfied: lxml in /usr/local/lib/python3.8/dist-packages (from snscrape) (4.9.2)
 Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-packages (from snscrape) (4.6.3)
 Requirement already satisfied: requests[socks] in /usr/local/lib/python3.8/dist-packages (from snscrape) (2.25.1)
-Requirement already satisfied: filelock in /usr/local/lib/python3.8/dist-packages (from snscrape) (3.9.0)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests[socks]-&gt;snscrape) (4.0.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests[socks]-&gt;snscrape) (2022.12.7)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests[socks]-&gt;snscrape) (1.26.14)
 Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests[socks]-&gt;snscrape) (2.10)
+Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests[socks]-&gt;snscrape) (4.0.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests[socks]-&gt;snscrape) (2022.12.7)
 Requirement already satisfied: PySocks!=1.5.7,&gt;=1.5.6 in /usr/local/lib/python3.8/dist-packages (from requests[socks]-&gt;snscrape) (1.7.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: snscrape
-Successfully installed snscrape-0.5.0.20230113
 </pre></div>
 </div>
 </div>
@@ -562,7 +482,7 @@ Successfully installed snscrape-0.5.0.20230113
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-785f3053-c00c-4ef7-ba90-d8880f35f783">
+  <div id="df-a892a183-a07f-4ba9-a300-a7df99d730f2">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -590,32 +510,32 @@ Successfully installed snscrape-0.5.0.20230113
   <tbody>
     <tr>
       <th>0</th>
-      <td>Sahabat #Jalancantik #JatengGayeng \nPekerjaan...</td>
-      <td>https://twitter.com/bpjmagelang</td>
+      <td>Hai, Sahabat #JalanCantik\nPekerjaan Pemelihar...</td>
+      <td>https://twitter.com/bptjwilska</td>
       <td>None</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>@ganjarpranowo Makan bubur manado di balikpapa...</td>
-      <td>https://twitter.com/beenbujana</td>
+      <td>Hai, Sahabat #JalanCantik\nPekerjaan Pemelihar...</td>
+      <td>https://twitter.com/bptjwilska</td>
       <td>None</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Sahabat #Jalancantik #JatengGayeng \nPekerjaan...</td>
-      <td>https://twitter.com/bpjmagelang</td>
+      <td>@yaafiii @ganjarpranowo Wadas sdh selesai mas....</td>
+      <td>https://twitter.com/Sahar98150335</td>
       <td>None</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>@DistanbunJateng @ganjarpranowo @Khosiie1 @brt...</td>
-      <td>https://twitter.com/supriYa76363577</td>
+      <td>Hai, Sahabat #JalanCantik\nPekerjaan Pemelihar...</td>
+      <td>https://twitter.com/bptjwilska</td>
       <td>None</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Sahabat #Jalancantik #JatengGayeng \nPekerjaan...</td>
-      <td>https://twitter.com/bpjmagelang</td>
+      <td>@ganjarpranowo Makan bubur Manado di Balikpapa...</td>
+      <td>https://twitter.com/PalembangJaya3</td>
       <td>None</td>
     </tr>
     <tr>
@@ -626,39 +546,39 @@ Successfully installed snscrape-0.5.0.20230113
     </tr>
     <tr>
       <th>95</th>
-      <td>@Siantar72 @siregar_ferro @SusilawatiSisi2 @qw...</td>
-      <td>https://twitter.com/ElinaDio</td>
+      <td>Sahabat #Jalancantik #JatengGayeng \nPekerjaan...</td>
+      <td>https://twitter.com/bpjmagelang</td>
       <td>None</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>@LuluatulF74 @ganjarpranowo artinya ❓</td>
-      <td>https://twitter.com/FaGtng</td>
+      <td>Sahabat #Jalancantik #JatengGayeng \nPekerjaan...</td>
+      <td>https://twitter.com/bpjmagelang</td>
       <td>None</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>@siregar_ferro @Siantar72 @SusilawatiSisi2 @qw...</td>
-      <td>https://twitter.com/ElinaDio</td>
+      <td>@shiryu223 @ganjarpranowo Kadrun nyumbang nyin...</td>
+      <td>https://twitter.com/Sahar98150335</td>
       <td>None</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>@ganjarpranowo Makan bubur sama si sabik\nPak ...</td>
-      <td>https://twitter.com/BilalAceng</td>
+      <td>@siregar_ferro @ElinaDio @Siantar72 @Susilawat...</td>
+      <td>https://twitter.com/sasakpujut</td>
       <td>None</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>@WagimanDeep212_ @ganjarpranowo @jokowi 😂😂😂</td>
-      <td>https://twitter.com/BaruNetas4</td>
+      <td>@ganjarpranowo semoga pak ganjar sehat selalu yaa</td>
+      <td>https://twitter.com/Liq_Fth</td>
       <td>None</td>
     </tr>
   </tbody>
 </table>
 <p>100 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-785f3053-c00c-4ef7-ba90-d8880f35f783')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a892a183-a07f-4ba9-a300-a7df99d730f2')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -709,12 +629,12 @@ Successfully installed snscrape-0.5.0.20230113
 
       <script>
         const buttonEl =
-          document.querySelector('#df-785f3053-c00c-4ef7-ba90-d8880f35f783 button.colab-df-convert');
+          document.querySelector('#df-a892a183-a07f-4ba9-a300-a7df99d730f2 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-785f3053-c00c-4ef7-ba90-d8880f35f783');
+          const element = document.querySelector('#df-a892a183-a07f-4ba9-a300-a7df99d730f2');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -759,9 +679,9 @@ Successfully installed snscrape-0.5.0.20230113
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
 Requirement already satisfied: requests in /usr/local/lib/python3.8/dist-packages (2.25.1)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests) (2.10)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.8/dist-packages (from requests) (1.26.14)
 Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.8/dist-packages (from requests) (4.0.0)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.8/dist-packages (from requests) (2.10)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.8/dist-packages (from requests) (2022.12.7)
 </pre></div>
 </div>
@@ -807,7 +727,7 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-adc92578-4b4b-4077-9126-9d1fb09cabf4">
+  <div id="df-52200bc3-35ca-49fd-aed9-a70c59d0f188">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -926,7 +846,7 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-adc92578-4b4b-4077-9126-9d1fb09cabf4')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-52200bc3-35ca-49fd-aed9-a70c59d0f188')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -977,12 +897,12 @@ Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.8/dist-p
 
       <script>
         const buttonEl =
-          document.querySelector('#df-adc92578-4b4b-4077-9126-9d1fb09cabf4 button.colab-df-convert');
+          document.querySelector('#df-52200bc3-35ca-49fd-aed9-a70c59d0f188 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-adc92578-4b4b-4077-9126-9d1fb09cabf4');
+          const element = document.querySelector('#df-52200bc3-35ca-49fd-aed9-a70c59d0f188');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
