@@ -25,17 +25,17 @@ pip install jupyterlab_code_formatter
 pip install pandas scikit-learn pyscopg2-binary
 # E.g. mamba install -y tensorflow
 pip install typing
-#pip install SQLAlchemy
+# pip install SQLAlchemy
 pip install pandas
 pip install scikit-learn
 pip install psycopg2-binary
 pip install sqlalchemy
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-1-b2d4c6e0109d>"[0;36m, line [0;32m5[0m
+[0;36m  File [0;32m"<ipython-input-1-427f386234cb>"[0;36m, line [0;32m5[0m
 [0;31m    pip install jupyterlab_code_formatter[0m
 [0m        ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-SyntaxError: invalid syntax (<ipython-input-1-b2d4c6e0109d>, line 5)
+SyntaxError: invalid syntax (<ipython-input-1-427f386234cb>, line 5)
 
