@@ -161,13 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">UTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tugas_Pagerank.html">Pagerank</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ct.html">Steaming</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="SVD.html">Topic Moodeling</a></li>
 </ul>
 
     </div>
@@ -483,7 +477,7 @@ Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packag
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-f9afddc9-86e4-4bec-85c1-39e62cf62331">
+  <div id="df-bb229d6d-b2f8-491f-ad77-58f1add2fa95">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -579,7 +573,7 @@ Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packag
 </table>
 <p>810 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-f9afddc9-86e4-4bec-85c1-39e62cf62331')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-bb229d6d-b2f8-491f-ad77-58f1add2fa95')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -630,12 +624,12 @@ Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packag
 
       <script>
         const buttonEl =
-          document.querySelector('#df-f9afddc9-86e4-4bec-85c1-39e62cf62331 button.colab-df-convert');
+          document.querySelector('#df-bb229d6d-b2f8-491f-ad77-58f1add2fa95 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-f9afddc9-86e4-4bec-85c1-39e62cf62331');
+          const element = document.querySelector('#df-bb229d6d-b2f8-491f-ad77-58f1add2fa95');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -761,25 +755,11 @@ Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packag
 <span class="g g-Whitespace">     </span><span class="mi">91</span>                 <span class="k">return</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="n">removalCount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">removals</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="k">for</span> <span class="n">visitor</span> <span class="ow">in</span> <span class="n">visitors</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>             <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="n">visitor</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_word</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>             <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="n">visitor</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">111</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_word</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_word</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept</span><span class="nt">(self, visitor)</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span> 
-<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">def</span> <span class="nf">accept</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitor</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">97</span>         <span class="n">visitor</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span> 
-<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">def</span> <span class="nf">accept_visitors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">visitors</span><span class="p">):</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Visitor/AbstractDisambiguatePrefixRule.py</span> in <span class="ni">visit</span><span class="nt">(self, context)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="k">for</span> <span class="n">disambiguator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">disambiguators</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">disambiguator</span><span class="o">.</span><span class="n">disambiguate</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">current_word</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">15</span>             <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">dictionary</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>                 <span class="k">break</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+<span class="g g-Whitespace">    </span><span class="mi">113</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_is_stopped</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

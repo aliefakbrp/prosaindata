@@ -1,0 +1,2484 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topic Moodeling &#8212; Proyek Sain Data</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SVD';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Pagerank" href="Tugas_Pagerank.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logodatamining.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logodatamining.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Proyeksi Sain Data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Crawl.html">Crawlling Twitter dan Web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipelines.html">Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">UTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas_Pagerank.html">Pagerank</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Topic Moodeling</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/aliefakbrp/prosaindata/blob/gh-pages/_sources/SVD.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/aliefakbrp/prosaindata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/aliefakbrp/prosaindata/issues/new?title=Issue%20on%20page%20%2FSVD.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/SVD.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Topic Moodeling</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import">import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crawl-komentar-dari-youtube">Crawl Komentar dari YouTube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-text">Clean Text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize">Tokenize</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword">stopword</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slank-word">Slank Word</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-svd">perform SVD</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="topic-moodeling">
+<h1>Topic Moodeling<a class="headerlink" href="#topic-moodeling" title="Permalink to this heading">#</a></h1>
+<div class="section" id="import">
+<h2>import<a class="headerlink" href="#import" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">googleapiclient.discovery</span> <span class="kn">import</span> <span class="n">build</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="o">=</span> <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>nltk
+<span class="n">_</span><span class="o">=</span> <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>indoNLP
+<span class="n">_</span><span class="o">=</span> <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pydrive
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1">#numpy </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="c1">#regex</span>
+<span class="kn">import</span> <span class="nn">re</span> 
+<span class="c1">#string population</span>
+<span class="kn">import</span> <span class="nn">string</span> 
+<span class="c1">#tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span> 
+<span class="c1">#stopword</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span> 
+<span class="c1">#slank word</span>
+<span class="kn">from</span> <span class="nn">indoNLP.preprocessing</span> <span class="kn">import</span> <span class="n">replace_slang</span> 
+<span class="c1">#stemming</span>
+<span class="kn">from</span> <span class="nn">nltk.stem.porter</span> <span class="kn">import</span> <span class="n">PorterStemmer</span> 
+
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">RegexpTokenizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="crawl-komentar-dari-youtube">
+<h2>Crawl Komentar dari YouTube<a class="headerlink" href="#crawl-komentar-dari-youtube" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>google-auth<span class="w"> </span>google-auth-oauthlib<span class="w"> </span>google-auth-httplib2<span class="w"> </span>google-api-python-client<span class="w">  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: google-auth in /usr/local/lib/python3.10/dist-packages (2.17.3)
+Requirement already satisfied: google-auth-oauthlib in /usr/local/lib/python3.10/dist-packages (1.0.0)
+Requirement already satisfied: google-auth-httplib2 in /usr/local/lib/python3.10/dist-packages (0.1.0)
+Requirement already satisfied: google-api-python-client in /usr/local/lib/python3.10/dist-packages (2.84.0)
+Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from google-auth) (5.3.0)
+Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /usr/local/lib/python3.10/dist-packages (from google-auth) (0.3.0)
+Requirement already satisfied: six&gt;=1.9.0 in /usr/local/lib/python3.10/dist-packages (from google-auth) (1.16.0)
+Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /usr/local/lib/python3.10/dist-packages (from google-auth) (4.9)
+Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /usr/local/lib/python3.10/dist-packages (from google-auth-oauthlib) (1.3.1)
+Requirement already satisfied: httplib2&gt;=0.15.0 in /usr/local/lib/python3.10/dist-packages (from google-auth-httplib2) (0.21.0)
+Requirement already satisfied: google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,&lt;3.0.0dev,&gt;=1.31.5 in /usr/local/lib/python3.10/dist-packages (from google-api-python-client) (2.11.0)
+Requirement already satisfied: uritemplate&lt;5,&gt;=3.0.1 in /usr/local/lib/python3.10/dist-packages (from google-api-python-client) (4.1.1)
+Requirement already satisfied: googleapis-common-protos&lt;2.0dev,&gt;=1.56.2 in /usr/local/lib/python3.10/dist-packages (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,&lt;3.0.0dev,&gt;=1.31.5-&gt;google-api-python-client) (1.59.0)
+Requirement already satisfied: protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,&lt;5.0.0dev,&gt;=3.19.5 in /usr/local/lib/python3.10/dist-packages (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,&lt;3.0.0dev,&gt;=1.31.5-&gt;google-api-python-client) (3.20.3)
+Requirement already satisfied: requests&lt;3.0.0dev,&gt;=2.18.0 in /usr/local/lib/python3.10/dist-packages (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,&lt;3.0.0dev,&gt;=1.31.5-&gt;google-api-python-client) (2.27.1)
+Requirement already satisfied: pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,&lt;4,&gt;=2.4.2 in /usr/local/lib/python3.10/dist-packages (from httplib2&gt;=0.15.0-&gt;google-auth-httplib2) (3.0.9)
+Requirement already satisfied: pyasn1&lt;0.6.0,&gt;=0.4.6 in /usr/local/lib/python3.10/dist-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth) (0.5.0)
+Requirement already satisfied: oauthlib&gt;=3.0.0 in /usr/local/lib/python3.10/dist-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib) (3.2.2)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3.0.0dev,&gt;=2.18.0-&gt;google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,&lt;3.0.0dev,&gt;=1.31.5-&gt;google-api-python-client) (1.26.15)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3.0.0dev,&gt;=2.18.0-&gt;google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,&lt;3.0.0dev,&gt;=1.31.5-&gt;google-api-python-client) (2022.12.7)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3.0.0dev,&gt;=2.18.0-&gt;google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,&lt;3.0.0dev,&gt;=1.31.5-&gt;google-api-python-client) (2.0.12)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&lt;3.0.0dev,&gt;=2.18.0-&gt;google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,&lt;3.0.0dev,&gt;=1.31.5-&gt;google-api-python-client) (3.4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import all the required libraries  </span>
+<span class="kn">import</span> <span class="nn">os</span>  
+<span class="kn">import</span> <span class="nn">google.auth</span>  
+<span class="kn">import</span> <span class="nn">googleapiclient.discovery</span> 
+    
+<span class="n">api_service_name</span> <span class="o">=</span> <span class="s2">&quot;youtube&quot;</span>
+<span class="n">api_version</span> <span class="o">=</span> <span class="s2">&quot;v3&quot;</span>
+<span class="n">DEVELOPER_KEY</span> <span class="o">=</span> <span class="s2">&quot;AIzaSyAW7xZS6DB-UBV9QTCXJkWBFQvcXyWSChU&quot;</span>
+
+<span class="n">youtube</span> <span class="o">=</span> <span class="n">googleapiclient</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
+    <span class="n">api_service_name</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">developerKey</span> <span class="o">=</span> <span class="n">DEVELOPER_KEY</span><span class="p">)</span> 
+    
+<span class="c1"># Set video ID  </span>
+<span class="c1"># source https://www.youtube.com/watch?v=LAt-RUDh7gg</span>
+<span class="n">video_id</span> <span class="o">=</span> <span class="s1">&#39;rbZ3Wv_hLJA&#39;</span> 
+    
+<span class="c1"># Call the API to get comments  </span>
+<span class="n">comments</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">youtube</span><span class="o">.</span><span class="n">commentThreads</span><span class="p">()</span><span class="o">.</span><span class="n">list</span><span class="p">(</span>  
+    <span class="n">part</span> <span class="o">=</span> <span class="s1">&#39;snippet&#39;</span><span class="p">,</span>  
+    <span class="n">textFormat</span><span class="o">=</span><span class="s1">&#39;plainText&#39;</span><span class="p">,</span>
+    <span class="n">videoId</span><span class="o">=</span><span class="n">video_id</span>
+<span class="p">)</span>
+
+<span class="n">get_results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+<span class="c1"># Loop through each comment and append to comments list  </span>
+<span class="k">while</span> <span class="n">get_results</span><span class="p">:</span>  
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">get_results</span><span class="p">[</span><span class="s1">&#39;items&#39;</span><span class="p">]:</span>  
+        <span class="n">comment</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;snippet&#39;</span><span class="p">][</span><span class="s1">&#39;topLevelComment&#39;</span><span class="p">][</span><span class="s1">&#39;snippet&#39;</span><span class="p">][</span><span class="s1">&#39;textDisplay&#39;</span><span class="p">]</span>  
+        <span class="n">comments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">comment</span><span class="p">)</span>  
+            
+    <span class="c1"># Check if there are more comments and continue iterating  </span>
+    <span class="k">if</span> <span class="s1">&#39;nextPageToken&#39;</span><span class="ow">in</span> <span class="n">get_results</span><span class="p">:</span>  
+        <span class="n">get_results</span> <span class="o">=</span> <span class="n">youtube</span><span class="o">.</span><span class="n">commentThreads</span><span class="p">()</span><span class="o">.</span><span class="n">list</span><span class="p">(</span>  
+            <span class="n">part</span> <span class="o">=</span> <span class="s1">&#39;snippet&#39;</span><span class="p">,</span>
+            <span class="n">videoId</span><span class="o">=</span><span class="n">video_id</span><span class="p">,</span>
+            <span class="n">textFormat</span><span class="o">=</span><span class="s1">&#39;plainText&#39;</span><span class="p">,</span>
+            <span class="n">pageToken</span> <span class="o">=</span> <span class="n">get_results</span><span class="p">[</span><span class="s1">&#39;nextPageToken&#39;</span><span class="p">]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="n">comments</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;comment&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-70c9c373-45dd-4633-98e3-beda8c470252">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Lembaga survei GK ada yg independent skr,,semu...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ibu Khofifah dan Bpk Prabowo sangattt okeee,ay...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Semoga Pak Anies selalu sehat wal afiat....</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pokoknya hanguskan quick count dan survey lain...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Lebih baik ANIS mengalah lebih dukung PRABOWO,...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2668</th>
+      <td>Udah gak respek SMA Ganjar gara2 kemarin ,,Ayo...</td>
+    </tr>
+    <tr>
+      <th>2669</th>
+      <td>dari ganjar ganti ke prabowo</td>
+    </tr>
+    <tr>
+      <th>2670</th>
+      <td>Mungkin saatnya pak prabowo mewujudkan mimpiny...</td>
+    </tr>
+    <tr>
+      <th>2671</th>
+      <td>Yg penting 2024 jangan menangkan PDIP. Yg ada ...</td>
+    </tr>
+    <tr>
+      <th>2672</th>
+      <td>prabowo</td>
+    </tr>
+  </tbody>
+</table>
+<p>2673 rows × 1 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-70c9c373-45dd-4633-98e3-beda8c470252')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-70c9c373-45dd-4633-98e3-beda8c470252 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-70c9c373-45dd-4633-98e3-beda8c470252');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">listStopword</span> <span class="o">=</span>  <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+
+<span class="c1">#remove emoji</span>
+<span class="k">def</span> <span class="nf">remove_emoji</span><span class="p">(</span><span class="n">string</span><span class="p">):</span> 
+  <span class="n">emoji_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;[&quot;</span>
+    <span class="c1"># emoticons</span>
+    <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F600</span><span class="s2">-</span><span class="se">\U0001F64F</span><span class="s2">&quot;</span> 
+    <span class="c1"># symbols &amp; pictographs</span>
+    <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F300</span><span class="s2">-</span><span class="se">\U0001F5FF</span><span class="s2">&quot;</span>  
+    <span class="c1"># transport &amp; map symbols</span>
+    <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F680</span><span class="s2">-</span><span class="se">\U0001F6FF</span><span class="s2">&quot;</span>  
+    <span class="c1"># flags (iOS)</span>
+    <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U0001F1E0</span><span class="s2">-</span><span class="se">\U0001F1FF</span><span class="s2">&quot;</span>  
+    <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U00002702</span><span class="s2">-</span><span class="se">\U000027B0</span><span class="s2">&quot;</span>
+    <span class="sa">u</span><span class="s2">&quot;</span><span class="se">\U000024C2</span><span class="s2">-</span><span class="se">\U0001F251</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;]+&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">emoji_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">remove_unwanted</span><span class="p">(</span><span class="n">document</span><span class="p">):</span> <span class="c1">#clean text</span>
+  <span class="c1"># remove user mentions</span>
+  <span class="n">document</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;@[A-Za-z0-9_]+&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">document</span><span class="p">)</span>
+  <span class="c1"># remove URLS </span>
+  <span class="n">document</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;http\S+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">document</span><span class="p">)</span>
+  <span class="c1"># remove hashtags</span>
+  <span class="n">document</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;#[A-Za-z0-9_]+&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">document</span><span class="p">)</span>
+  <span class="c1"># remove emoji&#39;s</span>
+  <span class="n">document</span> <span class="o">=</span> <span class="n">remove_emoji</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+  <span class="c1"># remove punctuation</span>
+  <span class="n">document</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[^0-9A-Za-z ]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span> <span class="p">,</span> <span class="n">document</span><span class="p">)</span>
+  <span class="c1"># remove double spaces</span>
+  <span class="n">document</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;  &#39;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">document</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1">#tokenize -&gt; memisah kalimat</span>
+<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>  
+  <span class="k">return</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="c1">#stopword -&gt; menghapus kata hubung</span>
+<span class="k">def</span> <span class="nf">stopWord</span><span class="p">(</span><span class="n">text</span><span class="p">):</span> 
+  <span class="n">katas</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">kata</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">kata</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">listStopword</span><span class="p">:</span>
+      <span class="n">katas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">katas</span>
+  <span class="c1"># return [kata for kata in text if kata not in listStopword]</span>
+
+<span class="c1">#slank word -&gt; mengganti kata yang tidak baku</span>
+<span class="k">def</span> <span class="nf">slank_word</span><span class="p">(</span><span class="n">text</span><span class="p">):</span> 
+  <span class="n">replace_slangs</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">kata</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">replace_slangs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">replace_slang</span><span class="p">(</span><span class="n">kata</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">replace_slangs</span>
+  <span class="c1"># return [replace_slang(kata) for kata in text]</span>
+
+<span class="c1">#stemming -&gt; mengganti kata menjadi kata dasar</span>
+<span class="k">def</span> <span class="nf">stemming</span><span class="p">(</span><span class="n">text</span><span class="p">):</span> 
+  <span class="n">katas</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+  <span class="k">for</span> <span class="n">kata</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">katas</span><span class="o">+=</span><span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span>
+  <span class="k">return</span> <span class="n">katas</span>
+  <span class="c1"># return &quot; &quot;.join([stemmer.stem(kata) for kata in text])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data = pd.read_excel(&quot;/content/drive/MyDrive/Kuliah/Semester 6/PSD/prosaindata/tugas/datatwitter.xlsx&quot;)</span>
+<span class="c1"># data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="clean-text">
+<h2>Clean Text<a class="headerlink" href="#clean-text" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;clean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;comment&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">remove_unwanted</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tokenize">
+<h2>Tokenize<a class="headerlink" href="#tokenize" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;clean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stopword">
+<h2>stopword<a class="headerlink" href="#stopword" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;stopword&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;tokenize&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">stopWord</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="slank-word">
+<h2>Slank Word<a class="headerlink" href="#slank-word" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;slankword&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stopword&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">slank_word</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;stem&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;slankword&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">stemming</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">data</span><span class="p">[[</span><span class="s1">&#39;comment&#39;</span><span class="p">,</span> <span class="s1">&#39;clean&#39;</span><span class="p">,</span> <span class="s1">&#39;tokenize&#39;</span><span class="p">,</span> <span class="s1">&#39;stopword&#39;</span><span class="p">,</span> <span class="s1">&#39;slankword&#39;</span><span class="p">,</span> <span class="s1">&#39;stem&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-4aef8008-0f31-45f6-b1ef-943cbcfd1c14">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>comment</th>
+      <th>clean</th>
+      <th>tokenize</th>
+      <th>stopword</th>
+      <th>slankword</th>
+      <th>stem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Lembaga survei GK ada yg independent skr,,semu...</td>
+      <td>Lembaga survei GK ada yg independent skrsemua ...</td>
+      <td>[lembaga, survei, gk, ada, yg, independent, sk...</td>
+      <td>[lembaga, survei, gk, yg, independent, skrsemu...</td>
+      <td>[lembaga, survei, enggak, yang, independent, s...</td>
+      <td>lembaga survei enggak yang independ skrsemua s...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Ibu Khofifah dan Bpk Prabowo sangattt okeee,ay...</td>
+      <td>Ibu Khofifah dan Bpk Prabowo sangattt okeeeayo...</td>
+      <td>[ibu, khofifah, dan, bpk, prabowo, sangattt, o...</td>
+      <td>[khofifah, bpk, prabowo, sangattt, okeeeayooo,...</td>
+      <td>[khofifah, bpk, prabowo, sangat, okeeeayooo, d...</td>
+      <td>khofifah bpk prabowo sangat okeeeayooo dukuuun...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Semoga Pak Anies selalu sehat wal afiat....</td>
+      <td>Semoga Pak Anies selalu sehat wal afiat</td>
+      <td>[semoga, pak, anies, selalu, sehat, wal, afiat]</td>
+      <td>[semoga, anies, sehat, wal, afiat]</td>
+      <td>[semoga, anies, sehat, wal, afiat]</td>
+      <td>semoga ani sehat wal afiat</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pokoknya hanguskan quick count dan survey lain...</td>
+      <td>Pokoknya hanguskan quick count dan survey lain...</td>
+      <td>[pokoknya, hanguskan, quick, count, dan, surve...</td>
+      <td>[pokoknya, hanguskan, quick, count, survey, yg...</td>
+      <td>[pokoknya, hanguskan, quick, count, survey, ya...</td>
+      <td>pokoknya hanguskan quick count survey yang men...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Lebih baik ANIS mengalah lebih dukung PRABOWO,...</td>
+      <td>Lebih baik ANIS mengalah lebih dukung PRABOWO ...</td>
+      <td>[lebih, baik, anis, mengalah, lebih, dukung, p...</td>
+      <td>[anis, mengalah, dukung, prabowo, anis, wakiln...</td>
+      <td>[anis, mengalah, dukung, prabowo, anis, wakiln...</td>
+      <td>ani mengalah dukung prabowo ani wakilnya 1 tuj...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2668</th>
+      <td>Udah gak respek SMA Ganjar gara2 kemarin ,,Ayo...</td>
+      <td>Udah gak respek SMA Ganjar gara2 kemarin Ayo p...</td>
+      <td>[udah, gak, respek, sma, ganjar, gara2, kemari...</td>
+      <td>[udah, gak, respek, sma, ganjar, gara2, kemari...</td>
+      <td>[sudah, enggak, respek, sama, ganjar, gara-gar...</td>
+      <td>sudah enggak respek sama ganjar gara-gara kema...</td>
+    </tr>
+    <tr>
+      <th>2669</th>
+      <td>dari ganjar ganti ke prabowo</td>
+      <td>dari ganjar ganti ke prabowo</td>
+      <td>[dari, ganjar, ganti, ke, prabowo]</td>
+      <td>[ganjar, ganti, prabowo]</td>
+      <td>[ganjar, ganti, prabowo]</td>
+      <td>ganjar ganti prabowo</td>
+    </tr>
+    <tr>
+      <th>2670</th>
+      <td>Mungkin saatnya pak prabowo mewujudkan mimpiny...</td>
+      <td>Mungkin saatnya pak prabowo mewujudkan mimpiny...</td>
+      <td>[mungkin, saatnya, pak, prabowo, mewujudkan, m...</td>
+      <td>[prabowo, mewujudkan, mimpinya, pemimpin, negara]</td>
+      <td>[prabowo, mewujudkan, mimpinya, pemimpin, negara]</td>
+      <td>prabowo mewujudkan mimpinya pemimpin negara</td>
+    </tr>
+    <tr>
+      <th>2671</th>
+      <td>Yg penting 2024 jangan menangkan PDIP. Yg ada ...</td>
+      <td>Yg penting 2024 jangan menangkan PDIP Yg ada a...</td>
+      <td>[yg, penting, 2024, jangan, menangkan, pdip, y...</td>
+      <td>[yg, 2024, menangkan, pdip, yg, blunder, kaya,...</td>
+      <td>[yang, 2024, menangkan, pdip, yang, blunder, k...</td>
+      <td>yang 2024 menangkan pdip yang blunder kayak ya...</td>
+    </tr>
+    <tr>
+      <th>2672</th>
+      <td>prabowo</td>
+      <td>prabowo</td>
+      <td>[prabowo]</td>
+      <td>[prabowo]</td>
+      <td>[prabowo]</td>
+      <td>prabowo</td>
+    </tr>
+  </tbody>
+</table>
+<p>2673 rows × 6 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4aef8008-0f31-45f6-b1ef-943cbcfd1c14')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-4aef8008-0f31-45f6-b1ef-943cbcfd1c14 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-4aef8008-0f31-45f6-b1ef-943cbcfd1c14');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_final</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;stem&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_save</span> <span class="o">=</span> <span class="n">df_final</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_save</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;datasetCapres2024yt.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_main</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/Kuliah/Semester 6/PSD/prosaindata/tugas/datasetCapres2024yt.csv&#39;</span><span class="p">)</span>
+<span class="n">df_main</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-72071280-32a3-4aef-be4c-ed37c18cafa0">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>stem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>lembaga survei enggak yang independ skrsemua s...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>khofifah bpk prabowo sangat okeeeayooo dukuuun...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>semoga ani sehat wal afiat</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>pokoknya hanguskan quick count survey yang men...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ani mengalah dukung prabowo ani wakilnya 1 tuj...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2509</th>
+      <td>pdi skiptau kadernya</td>
+    </tr>
+    <tr>
+      <th>2510</th>
+      <td>sudah enggak respek sama ganjar gara-gara kema...</td>
+    </tr>
+    <tr>
+      <th>2511</th>
+      <td>ganjar ganti prabowo</td>
+    </tr>
+    <tr>
+      <th>2512</th>
+      <td>prabowo mewujudkan mimpinya pemimpin negara</td>
+    </tr>
+    <tr>
+      <th>2513</th>
+      <td>yang 2024 menangkan pdip yang blunder kayak ya...</td>
+    </tr>
+  </tbody>
+</table>
+<p>2514 rows × 1 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-72071280-32a3-4aef-be4c-ed37c18cafa0')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-72071280-32a3-4aef-be4c-ed37c18cafa0 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-72071280-32a3-4aef-be4c-ed37c18cafa0');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_main</span> <span class="o">=</span> <span class="n">df_main</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_main</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stem    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vectorize document using TF-IDF</span>
+<span class="n">tfidf</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">documents_list</span> <span class="o">=</span> <span class="n">df_main</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">documents_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;lembaga survei enggak yang independ skrsemua sudah amplopkami rakyat enggak percaya lembaga tsbkecuali medso ilc karni ilya &#39;,
+ &#39;khofifah bpk prabowo sangat okeeeayooo dukuuung suara perempuan indonesiasmg dawuh gu dur diijabah gusti allaah swt bpk prabowo presidenaamiiiiin &#39;,
+ &#39;semoga ani sehat wal afiat &#39;,
+ &#39;pokoknya hanguskan quick count survey yang mengganggu kemenangan prabowo &#39;,
+ &#39;ani mengalah dukung prabowo ani wakilnya 1 tujuan bela orang yang teraniaya prabowo wujudkan mimpi gusdur mengalah kalahkan pdip bersatulah rakyat indonesia &#39;,
+ &#39;ya kalo tetap pilih pemimpin yang menolak pildunslm nya enggak tuan rumah pildun sgl umur mudah mudahan rakyat benar-benar cerda mmlih pemimpin yang cinta rakyat nya cinta partainya &#39;,
+ &#39;ganjar peranowo ridwan kamil bersatu presiden wakil peresideninsyaallah amin &#39;,
+ &#39;saya dkung prabowo &#39;,
+ &#39;legowolah petinggi keadaannya kekinian &#39;,
+ &#39;hoaaaaaaaaaaaaaaxxxxxx &#39;,
+ &#39;ganjar memang jagoku &#39;,
+ &#39;ga pol ganjar ri 1 &#39;,
+ &#39;prabowo ani merdeka &#39;,
+ &#39;semoga nu tokoh2nya tidak dijadikan petuga partai &#39;,
+ &#39;memilih prabowo koalisi dengan pdip enggak memilih prabowo &#39;,
+ &#39;detik2 manuvermanuv ganjar prabowouda coblo &#39;,
+ &#39;yang bahaya prabowo hofifah &#39;,
+ &#39;prabowo mahpud md ok &#39;,
+ &#39;saran nu ramalan pakai gusdur pakai prabowo presiden usia tuajadi mohon nu harga bapa gusdur pakai prabowo orang ikhla hidupnya lu rakyatnya &#39;,
+ &#39;saya enggak bosan bosan mengajukan prabowo mapuhput mdjadi 1 2 &#39;,
+ &#39;prabowo mahput biar ganjar ani prabowo yang presidennyasudah pastikan menang &#39;,
+ &#39;ani membayar lembaga survey saja urutan 3bagi ani lembaga surveyyang element masyarakat mendukung nyaorang cerda pilih ani &#39;,
+ &#39;orang arap saja orang arap menang usungkan dada kasta &#39;,
+ &#39;kinanjjar yang jadi presideng skap2 takyat merasakn hrga sama barang akan tmpa bt seprti smx pakai jokowi mana sama sektr barg bukan hx bbm yang tapi smax barang yang sangat brdmpk pada kita rkyt jadi saya mengajk sama rkyt inddomesia untuk memii prabowo kalau perubhn totl pada negeri kita salm keadilg dari saya wassalm &#39;,
+ &#39;indonesia mayorita beragama islamnamun presiden ya orang islam yang senangi agama2 pimpin orang-orang yang amanah senangi rakyat &#39;,
+ &#39;kalau prabowo salah memilih pasangan saya kalah &#39;,
+ &#39;jauuuuu7uuuhdr nya tamaaasdg lapa ngan hitungan tersebut men urut bbrapa dengan rekan partai seblah &#39;,
+ &#39;memilih prabowosebagai presiden 2024 &#39;,
+ &#39;surveyor indik adiknya surveyor charta politika hasil survey ganjar nosatu tupa tipu lapangan lu elukan capr ani &#39;,
+ &#39;prabowo capr 2024 dukung berpasangan dengan kofifah cocok &#39;,
+ &#39;nya tayngan yang bermututampilkan prestasi survai survei &#39;,
+ &#39;prabowo mahfud mdtop &#39;,
+ &#39;ani ri 1 &#39;,
+ &#39;kaum mileni negeri memilih prabowo ketimbang ganjar gagalkan pildun u20 &#39;,
+ &#39;ingatkan tolong jang nekad ri 1 sudah jaman nya ri 2 insya allah bpk pemerintahan mbanggakan keluarga bpk &#39;,
+ &#39;bp ganjar pilihan ku deso pdip keluarga unggul &#39;,
+ &#39;survey belum jaminan &#39;,
+ &#39;belum tau kamu ya selukuruh sumatra mendukung prabowo salam kompak prabowo &#39;,
+ &#39;yang ikhla memimpin indonesia prabowo subianto prabowo petuga partai &#39;,
+ &#39;pani ahi cook &#39;,
+ &#39;jangan coblo merah percayalah &#39;,
+ &#39;prabowo &#39;,
+ &#39;semoga media sosial menipulasi pemilihan presiden semoga digit pemilihan presiden jujur dalam menaroh angka survei &#39;,
+ &#39;pkganjar lo menang mutlak memilih wakil jawa pkmahfud md &#39;,
+ &#39;pasangan terbagu perpaduan jawa dengan jawa &#39;,
+ &#39;2024 presid miliknya probowo mahfud md &#39;,
+ &#39;prabowo ganjar peluang nya pengganti jokowi ahi zong &#39;,
+ &#39;ganjar mah blusukannya tertara ambisi mandik &#39;,
+ &#39;sih indonesia maju wakilnya hari tano &#39;,
+ &#39;prabowo mahfud md tolong benahi kebobrokan polri &#39;,
+ &#39;demokrat kontribusi rakyat bbm &#39;,
+ &#39;pdi umat islam dilarang mengaji &#39;,
+ &#39;aceh sesumatera prabowo ri 1 &#39;,
+ &#39;ani menguru dki wakil kd klunyapr wakil mgknbisa winner &#39;,
+ &#39;ayo yang pilih pdip like &#39;,
+ &#39;pakai prabowo yang cocok wakilnya pakai mahfud md &#39;,
+ &#39;lsa lembaga surpai asik 1 prabowo 372ani 263ganjar 214tidak tau 16di surpai 34 propinsi kalangan &#39;,
+ &#39;wakilnya ganjar pilih prabowo &#39;,
+ &#39;elektabilita sumber info nya enggak penggiringan opini doang lembaga survey abal-ab &#39;,
+ &#39;rakyat yang cerda pilih capr ani baswedan &#39;,
+ &#39;mileh ganjar pranowo saja &#39;,
+ &#39;survey bayaran atur percaya &#39;,
+ &#39;percaya golongan saja enggak &#39;,
+ &#39;pakai prabwo haru disandingkan dengan ahok mantap &#39;,
+ &#39;pakai prabowo adem auranya melanjutkan keberhasilan pembangunan indonesia pakai jokowi prabowo ok &#39;,
+ &#39;bohong survei nya ani mantap &#39;,
+ &#39;prabowountuk wakilnya makmud md gibran ribu semoga dengar &#39;,
+ &#39;pendapat saya presiden ri 2024 prabowo subianto wakilnya ani baswedan negara maju kehidupan berbangsa bernegara aman tentram &#39;,
+ &#39;prabowo bangsa sajajangan nyapr malu enggak uru kkb papua takut melanggar hamseandainya nyapresdipasangkan enggak presiden &#39;,
+ &#39;salah bohong survei &#39;,
+ &#39;apapun pilih prabowo semoga berjalan lancar &#39;,
+ &#39;survey nya bohongan &#39;,
+ &#39;lihat hasil pole youtub sampl 39 ribu 1 prabowo subianto 7 2 ganjar pranowo 9 3 ani baswedan 84 &#39;,
+ &#39;kalau prabowo tidak berpasangan dengan mahfud mala ah prabowo dengan mahfud menang &#39;,
+ &#39;semoga tgb sama perabowo pemimpin indonesia seumur hidup amin amin amin yarabb alamiiiinnnn &#39;,
+ &#39;peresiden indonesia 2024 takdir apa prabowo renopasi bangsa indonesia &#39;,
+ &#39;nya apa prabowo capr ganjar pranowo lalah bangsa jalan bineka tunggal ika &#39;,
+ &#39;allah yang maha kuasa kali calon cawapr nya kalo tidak takdir ya kgk menang usaha wajib hasil lihat deh &#39;,
+ &#39;dominan orang jawa enggak kesempatan samasekali diluar jawa politik jawa eh salah indonesia wkkkk &#39;,
+ &#39;kotak suara nya kardu gmbok pakai kotak besi ya &#39;,
+ &#39;surpeinya &#39;,
+ &#39;survey bayaran &#39;,
+ &#39;prabowo mahmud md &#39;,
+ &#39;ganjar khofifah sandi &#39;,
+ &#39;semoga rakyat indonesia cerda tidak pilih capr dari pdipcapr ganjar rakyat susah bbm 12x sembako mahal pupuk susah harga gabah turun import bera cari kerja susuh rezim berpihak kepada pengusaha tidak berpihak pada rakyat &#39;,
+ &#39;survey dibyr rakyat tetap pilih ani baswedan n enggak percaya me survey &#39;,
+ &#39;prabowo pemimpin komplit wawasaniq integrita berani kayak mengerti masalah negeri inipokokenya top markotop di &#39;,
+ &#39;ganjar ogah banget bisa2 pada menonton bokep anak-anak intinya sayang no tapi pdip &#39;,
+ &#39;mantap &#39;,
+ &#39;pesan pprabowocpt2lah menentukan cawapresnya pakyg tpt adlah pmahfud mdsegeralah mumpung belum dahuluan orang &#39;,
+ &#39;khofifah potensi untuk wakil capr 2023 duluan capr 2024 &#39;,
+ &#39;survei mengunggulkan ganjar ganjar cukung 9 naga &#39;,
+ &#39;mantap presiden prabowo wakilnya mahfud md &#39;,
+ &#39;ganjarthebestamin &#39;,
+ &#39;ani presiden 2024 &#39;,
+ &#39;cerda apa ani &#39;,
+ &#39;masyarakat olahraga indonesia faktor menentukan terpilihnya bp presiden &#39;,
+ &#39;yang maju gandjarsandi prabowoerik tohir aniesahi &#39;,
+ &#39;good &#39;,
+ &#39;harga mati pilih presid pro pekerjaburuh &#39;,
+ &#39;wakilnya ma ani insyah allah demorati menjaga membawa menciptakan keadilan sosial rakyat ri mensejahtrakan partainya ani presiden 2024 amin ya rabbal alamin &#39;,
+ &#39;prabowo menang wakilnya moga2 pkb saja &#39;,
+ &#39;prabowo sebagai capr salah memilih cawapr dapat menggeru suara pemilhcoba prabowo ajak ma gibran capwapresnya memenangkan pemilu 2024 &#39;,
+ &#39;bagusnya prabowo pasangannya ahok &#39;,
+ &#39;prabowo mahfud &#39;,
+ &#39;pendukung bola begitu banget ya entar jagoanya kalah ngamuk pemain dihujat tragedi kanjuruhan jagoanya kalah diserang hadeeehh repot deh &#39;,
+ &#39;cocok mendukung prabowo dengan mahfud &#39;,
+ &#39;prabowo mahfut mantap memimpin negeri &#39;,
+ &#39;ani silakan pilih ahi menanggung kekalahan &#39;,
+ &#39;hasil survey cawapr berpengaruhcontoh nyata maruf amin survey cawapr terhadap bliau &#39;,
+ &#39;yang keren itupak prabowo berpasangan dengan mahfud mdbu khofifah &#39;,
+ &#39;capresnyapilihanku yang disandingkan prof mahfud md &#39;,
+ &#39;yang beraga islam ayo dukung ganjar non muslim biarla mendukung prabowo yang muslim terpecah &#39;,
+ &#39;maskipun cinta sepak bola disisi berdosa mendukung israel berlabu tanah pili ganjar karena nyawa ummat islam lebi berharga bola &#39;,
+ &#39;p prabowo capresnya bu khofifah wapresnya padangan cocok &#39;,
+ &#39;masih ahi saja &#39;,
+ &#39;jawa koentji &#39;,
+ &#39;praboworidwan kamil &#39;,
+ &#39;prabowo ye &#39;,
+ &#39;ganjar saja pasangan ahi cocok &#39;,
+ &#39;prabowo erick the best &#39;,
+ &#39;pildun usia 20 yang menjeg dengan peristiwa no nono pilih ani wae sing amanah percaya surw uang ya yang menang aru paham lembaga lembaga bro &#39;,
+ &#39;jangan plih capr yang pintar pencitraanplih capr yang sudah terbukti pngabdianx kpda negaraoak ani &#39;,
+ &#39;ani the next presid indonesia &#39;,
+ &#39;faktanya prabowomahfud md &#39;,
+ &#39;hati hati memilih perhitungkan partainya kandidatnya jangan lingkaran pki negara kuasai ase &#39;,
+ &#39;prabowo kasihan kau ambisi sampau mati sia sia hidup mu kau mata rakyat sepertu serigala berbulu domba jender mengejar kekuasaan menhalalkanbsegala &#39;,
+ &#39;biar ganjar wakilnya kang emil sebagai orang jabar tidak terpengaruh untuk memilih ganjar pilihanku ani &#39;,
+ &#39;prabowo mahfud md &#39;,
+ &#39;semoga prabowo subianto presiden ri amin &#39;,
+ &#39;prabowo mahfud jo gandoz kotos2 &#39;,
+ &#39;setuju kalo rk wakil gpartinya propinsi dengan jlh suara terbanyakinsyaaallah menangtermasuk sponsor pemenangan &#39;,
+ &#39;ganjar &#39;,
+ &#39;all ini prabowo &#39;,
+ &#39;perabowo no surpey yang tpat perabowo yang menang kalau erik enggak masuk kariawan pengangkut bbm sengsara supir kondek gajinya enggak sesuai kalau pemimpin enggak mengerti memanusiakan pekerja berat &#39;,
+ &#39;prabowo mahfud mdini indonesia jaya &#39;,
+ &#39;perabowo ri1 &#39;,
+ &#39;presiden 2024 bp prabowo negarawan tidak koropsi &#39;,
+ &#39;alhamdulilah pengamat 2 pilpr sudah nasib besok &#39;,
+ &#39;survey mah &#39;,
+ &#39;terbuka uang 300t yang diributkankalau diambil banteng ya hilang lenyap &#39;,
+ &#39;berpasangan bpk mmd &#39;,
+ &#39;pilih prabowo berpasangan mahfud mdani ganjar biarkan buzzer rp nya berperang &#39;,
+ &#39;semoga prabowo ani baswedan bersatu untuk memimpin bangsa negarasemoga allah swt terbaik untuk memimpin bangsa &#39;,
+ &#39;prabowo ambil sikap jiwa patriotik oligargi strategi penghianatan prabowo dibohongi 3 kalinya &#39;,
+ &#39;saya pilih ani &#39;,
+ &#39;telek percaya survey penipu dananya saja enggak &#39;,
+ &#39;pdip enggak pileh muslim &#39;,
+ &#39;sandi diluar jawa tidak simpati mala ahi menyatu dengan jawa &#39;,
+ &#39;tergantung &#39;,
+ &#39;bkannya salah pilih salah amplop &#39;,
+ &#39;ganjar prabowo presiden ri &#39;,
+ &#39;batal nya piala dunia lu 20 kecewa &#39;,
+ &#39;masyarakat indonesia yang menguasai politik pdipkarena politik pdip mendukung masyarakat kebijakan kebijakan nyadari harga bahan pokok mahalburuh pabrik bensin harga 1liter6500sekarang melonjakuntuk masyarakat kepemimpinan partai yang rakyatdari harga normal mudah nya mencari ekonomi &#39;,
+ &#39;pasangan prabowo ganjar pranowo biar an o &#39;,
+ &#39;yang menang ganjar ani prabowo sok golput cocok calon presiden &#39;,
+ &#39;gasss pooolll ganjar pranowosiap dukung &#39;,
+ &#39;semoga tinggal ganjar ulahmu prabowo menang &#39;,
+ &#39;silkan surv mengasih bosan &#39;,
+ &#39;prabowo pasangkan kofifah saru mosok duda pasangkan janda kumpul kebo &#39;,
+ &#39;ganjar puanprbwio mahpud ani ahypasti seru 2024 &#39;,
+ &#39;pakai ani insakllah prsdn 2024 &#39;,
+ &#39;24 jadi persiden jarwo artin ganjar prabowo &#39;,
+ &#39;rakyat indonesia mendukung ganjar pranowo berpasangan dengan prabowo subianto &#39;,
+ &#39;ideal 2024 prabowo mahmud md &#39;,
+ &#39;prabowo cocoknya makwud md &#39;,
+ &#39;pakai prabowo kalo pengin menang jangan sama pdip ambil boleh cawapr pakai mahfud md kok enggak susno duadji karena belum wapr dari kepolisian biar pn purnawirawan &#39;,
+ &#39;survey lo survey sesuka hati &#39;,
+ &#39;segenap rakyat indonesia pilih petuga rakyat indonesia ani 2024bukan petuga partai yang melayani ologarki rezim &#39;,
+ &#39;gue dikasih nasi bungku enggak memilih ani orang yaman &#39;,
+ &#39;sarat menang prabowo gandeng mhfut md amin &#39;,
+ &#39;gnjar feat copiva juga bisa &#39;,
+ &#39;enggak yang gnjar tetap sama mahpud atau eric tohir &#39;,
+ &#39;gnjar mnang izin tuhan &#39;,
+ &#39;tipu itu hahahaha &#39;,
+ &#39;selamat suks amin indonesia maju &#39;,
+ &#39;survey menarik &#39;,
+ &#39;suara timur prabowo 2024 &#39;,
+ &#39;prabowo n mahmud mdpass negeri &#39;,
+ &#39;prabowo subianto petuga partai petuga rakyat indonesia &#39;,
+ &#39;negara republik indonesia luasprabowo cocok presidendia tni berwibawa dimata duniapengalaman meliternyaklo negara presiden ya sipiltidak cocok lemah pengalamanya selingkub gubernur belum memimpin negara yang &#39;,
+ &#39;lu mengomong saja gue tetap dukung bpk ani baswedan presinden indonesia 2024 sampai 2029 &#39;,
+ &#39;nyong jawa teng prabowo &#39;,
+ &#39;prabowo pilihnku &#39;,
+ &#39;ganjar pasangannya bagu mahfud md &#39;,
+ &#39;prabowo presidenku ganjar wakil presiden &#39;,
+ &#39;orang lubuk linggau setuju banget prabowo presiden indonesia prabowo orang indonesia asli &#39;,
+ &#39;jawa barat sudah sepakat dukung ani karena ani usungan partai melaikan usung partai ani maju teru ani &#39;,
+ &#39;prabowo mengajak anak jokowi wakilnyaa gibran rakabum &#39;,
+ &#39;2024 bapakdrh ani rasyid baswedan mpp phd presiden republik indonesiaaamiiin &#39;,
+ &#39;partai gerindra capresnya pa percaya sudah menampak tersenyum penuh kebahagiaan untuk menyambut kemenangan pilpr 2024 &#39;,
+ &#39;semoga prabowo subianto dalam memilih oendampingnya benar-benar irang ihla yang cita-cita luhur mata kemajuan bangsa negara kemakmuran rakyat indonesia &#39;,
+ &#39;apa prabowo didukung relawan jokowi mania prabowo berpengalaman komitmen nkri pancasila diragukan berlatar tni kopasu rakyat percaya apa prabowo beliau bohongi orang dibohongi orang beliau dipercayai rakyat nkri &#39;,
+ &#39;prabowo mahfudz josss &#39;,
+ &#39;percaya lembaga surv khusu presiden indonesitapi percaya lembaga surv metolog perhitungan simpel pilpr indonesia &#39;,
+ &#39;hati-hati buzer rp ganti baju numpang kendaraan partai mabok masuk kabineyjilat jilat saba fitnah fitnah &#39;,
+ &#39;prabowo prinsipnya stalintrack recordnya semenjak aktif milit hitam menang sendirimakanya diusir suharto cendana &#39;,
+ &#39;prabowo presiden berikutx &#39;,
+ &#39;prabowo ganjarbaru ok &#39;,
+ &#39;prabowo pendukungnya emak-emak 212 sudah beralih ani kalah sok tau survey ani peringkat 3 survey pilkada eh enggak taunya menanng tuh jadi gubernur survey yang bisa diandelinngapain memilih capr yang sudah menggagalkan pildun u20 &#39;,
+ &#39;prabowo khofifah yessss &#39;,
+ &#39;difin pilpr bertemu prabowo vs pranowo difin u20 yang btl masuk indonesiaasyiik &#39;,
+ &#39;enggak pilih politik yang sudah dukung koalisi istana bikin susah rakyat survey abal abal gue enggak pulih wowo kecewa pol &#39;,
+ &#39;mahfud yang cocok pasangan ganjar &#39;,
+ &#39;ganjar prabowo no &#39;,
+ &#39;ganjar prabowo &#39;,
+ &#39;ganjar erik &#39;,
+ &#39;preeeeethari percaya survei &#39;,
+ &#39;prabowo kali mahfud md all ini &#39;,
+ &#39;tetap mendukung prabowobeliau penentu petuga &#39;,
+ &#39;surpai banyaran &#39;,
+ &#39;probowo subianto pilihanku &#39;,
+ &#39;pilih kader pdip sampai cari makan ssh partai korupsi nya &#39;,
+ &#39;survey abal2biasa ani 29 persenprabowo27 persen ganjar 23 persensandi10 persenmahfud10 persen &#39;,
+ &#39;gu dur bilang prabowo ikhla rakyatpasti prabowo presiden &#39;,
+ &#39;anni pilihan keluargaku orgnya cerda tidak plongaplongo &#39;,
+ &#39;ptabowo sudah dipermaenkan jkw &#39;,
+ &#39;pakai prabowo cocoknya mahfud md &#39;,
+ &#39;jatim yang berbalik arah menyukai banteng prabowo presiden ri 2024 jatim no banteng ganjar kalah tinggal jateng saja jabar enggak suka banteng &#39;,
+ &#39;prabowo mengusung ani sebagai cawapr prabowo ani &#39;,
+ &#39;ani oke survey cuman posisi 3 survey kompeten &#39;,
+ &#39;duwa pilihan pprabowo 1pmahfut 2buhofifah terima kasih &#39;,
+ &#39;hati hati pprabowo jangan sampa ter jebak jokowi mega &#39;,
+ &#39;prabowo ri 1 ganjar ri2 n serasi &#39;,
+ &#39;tim sorv penjilat rezim &#39;,
+ &#39;jangan pilih ganjar pilpr 24 ya bro &#39;,
+ &#39;blora hadir untukmu ganjar pranowo capr pilihan ku goyah &#39;,
+ &#39;prediksi saja sih pemilih beba sesuka hati memilih saja yang senang &#39;,
+ &#39;presidenya pengin menang 2024 cawapresnya mahfud md hasil bisikan langi &#39;,
+ &#39;melek ekonomi indonesia indonesia ema &#39;,
+ &#39;prabowo ok gerindra ye berharap prabowo gandeng mahfud sebagai cawapr pasangan insya allah menang &#39;,
+ &#39;jsngan mencari pasangan survei semoga prabowo mencari pasangan tokoh mastarakat prabowo dgan ketua pbnu kah yahya insyaallah menang &#39;,
+ &#39;kalau orang indonesia pilih ani baswedan pimpin provinsi tidak berhasil kalau pimpin negara &#39;,
+ &#39;prabowo khofifah &#39;,
+ &#39;pokoknya indonesia butuh ani baswedan memperbaiki negeri yang koyak akibat ulah sih raja kibul esemka berijazah &#39;,
+ &#39;gue enggak percaya dengan survey enggak metodenyayg terbuka layak dipercaya survey ilc iwan fal dll &#39;,
+ &#39;prabowo cari pasangan partai ketua partai mendulang suara &#39;,
+ &#39;percaya media &#39;,
+ &#39;prabowoooooooooooooooo &#39;,
+ &#39;indramayu dukung prabowo subianto beliau ikla mencintai menjalankan tuga negara nkri brooo &#39;,
+ &#39;sibuk saja calon mencalonkan rakyat pilihanyg koalisi amin rai dengan rizal ramli pengamat nya roki gerunguntuk presiden yang belum &#39;,
+ &#39;sepak bola ya sepak bola politik ya politik terpisah dicampur adukkan pilpr yad sosok pemimpin layak dipilih nasionali tulen plinplan ganjar is the best &#39;,
+ &#39;susahsusah silsilah calon pemimpin pemimpin disulap berdasarkan dilaksanakan terjebak teguh pendirian merasakan disuguhi tuhan sosok pemimpin prabowo subianto langsung melanjutkan tongkat estafet pengelolaan negara presiden jokowi beruntung bangsa indonesia memiliki tokoh prabowo subianto 2009 mengaw berdirinya demokrasi negara keadilan hukum kolam beliau berenang berkarya bangsa indonesia prabowo maju prabowo bangsa indonesia mengawali ujian setia membela bangsa negara partai politik dibentuknya suguhan pemikiran alternatif bangsa indonesia melahirkan pemimpin bangsa indonesia rakyat kesetiaannya bangsa prabowo subianto biarkan rakyat tersenyum dijamin keamanan kesejahteraan tokoh prabowo tenang sesuai profesi masingmas tau pemimpin teruji kepribadian pengaabdiannya semoga bangsa indonesia tersenyum biarkan orang sifat susah bangsa indonesia tersenyum bahagia senang bangsa indonesia susah tersenyum bahagia selamat beraktivita bangsaku secercah harapan dirasakan 2024 salam indonesia raya mania 08 &#39;,
+ &#39;ganjar no1 &#39;,
+ &#39;hati-hati presiden orbitan pdip mengangkut hutang menciptakan ketidakadilan gol negara indonesia yang menikmati kesejahtraan &#39;,
+ &#39;hoki 08 preaiden yang delapan prabowo subianto ri 1 bersand sama erik tohir &#39;,
+ &#39;nk capr ani bla enggak minat yang jla &#39;,
+ &#39;ganjar cocok sama erick tohir andika perkasasementara prabowo cocok nya sama puan maharani &#39;,
+ &#39;pilih ani baswedan &#39;,
+ &#39;calon wakil presiden dampingi prabowo subianto 1 khofifah indra parawansyah 2 mahfud md puji astuti 3 retno marsudi terima kasih &#39;,
+ &#39;bpk prabowo cocok nya berpasangan dengan bpk mahfud &#39;,
+ &#39;percaya survey &#39;,
+ &#39;ganjar yang baha bosan &#39;,
+ &#39;ani gatotsmoga &#39;,
+ &#39;pakai wowok pakai zoncocok &#39;,
+ &#39;pasangkan prabowo gibran cinta &#39;,
+ &#39;survey bohong &#39;,
+ &#39;semoga apa ani pasangannya jadi presiden 2024 rakyat bahagia amin yra &#39;,
+ &#39;maju brabowo masyarakat mendukung mu &#39;,
+ &#39;capr p probowo cawapr mahfud md &#39;,
+ &#39;ganjar rk is the best the nex presid &#39;,
+ &#39;tgn susah itu sih mani kalo ngambil dari ok tapi orang yang di suka wakil nya bukan capr nya memang cocoknya dari partai pengusung wae pk sama demokrat &#39;,
+ &#39;ani ahi menang jatim &#39;,
+ &#39;prabowo cocoknya menteri koordin pertahanan keamanan &#39;,
+ &#39;survei nya orang pdip saja ganjar nomor &#39;,
+ &#39;jangan percaya ganjar nomor 1 ngebohongi rakyat saja lihat lapangan &#39;,
+ &#39;tgb indonesia harga mati &#39;,
+ &#39;prabowomahmud mddijamin indonesia makmur sejahteramerdeka &#39;,
+ &#39;kalau perabowo sudah ngambil wakilnya ma gibran znanti jokowi mendukung perabowo pdi puse &#39;,
+ &#39;ani presedenku &#39;,
+ &#39;hong hong &#39;,
+ &#39;pengamat makin uang kirim ora sudi &#39;,
+ &#39;ganjar pranowo sandingkan airlangga pastikan menang telak pilpr 2024 &#39;,
+ &#39;ahi &#39;,
+ &#39;prabowo sama sandiaga uno &#39;,
+ &#39;tim pemenangan sandiaga uno calon wakil presiden kofifah calon presiden prabowoini jagoanku jagoanmu &#39;,
+ &#39;pasangan capr cawapr yang cocok prabowo eric thohir &#39;,
+ &#39;prabowo mahfud md joss &#39;,
+ &#39;good bye ganjar beralih prabowo subianto &#39;,
+ &#39;prabowo presiden wakilnya erick tohirayo maju beranta perusahaan pinjaman onlin ojkpak jokowi mencabut izin menutup perusahaan pinjaman onlin meresahkanhanya prabowo musnahkan pengusaha pinjaman onlinepak jowowi pdip &#39;,
+ &#39;ngemi keerik tohir enggak malu pabola bola7 &#39;,
+ &#39;semoga bpk prabowo kuatkan rayuan palsu &#39;,
+ &#39;penel bayaran &#39;,
+ &#39;prabowo dibilang jokowiitukan karena prabowo menterinya jokowihanya belum memimpin seperti gaya krj jokowi &#39;,
+ &#39;semoga prabowo subianto berhasil raih jabatan presiden indonesia pilpr 2024 gagal izin allah penguasa alam semesta kalah legowo menang dengan curang yang membahayakan pribadi bangsa negara rakyat indonesia &#39;,
+ &#39;survey mempengaruhi pemilih pemula pemilih tradision asumsi pilih menangngapain pilih kalah &#39;,
+ &#39;tenggelamkan partai merah yang berkiblat beij haram dipilih &#39;,
+ &#39;omong kosong yang survei daerah jatengnttbali ganjar pemenang kalau dkijabarbanten ani kalau yang disurvei pensiunan tniveteran ya prabowo unggul inti nya yang pesan bayar coba surveivot netral ilc ani unggul &#39;,
+ &#39;no 3 tetap &#39;,
+ &#39;prabowo jokowipolitikbisa mantul &#39;,
+ &#39;surv abal-ab yang percara &#39;,
+ &#39;prabowo gu yasinprosinmantaappp &#39;,
+ &#39;prabowo ikuti jejak surya paloh bu megawaticarilah bacapr intern partai gerindra pasangkan ani pole nya meroket &#39;,
+ &#39;cnn channel keren saja nampilin survei abal abal fakta lapangan kagak naekin sambutan kehadiran capr ani baswedan antusia masyarakat kok survei nya sih wowo sih pirang no &#39;,
+ &#39;survei nya dimana ma iya jatim ma base &#39;,
+ &#39;u20 kau gagalkan ganjaringat &#39;,
+ &#39;prabowo mafud 100 &#39;,
+ &#39;dukung memenangkan pakai ani presiden ri 1 20242029 &#39;,
+ &#39;ganjar terbaik mah mudah-mudahan pengaruh penolakan tim israil &#39;,
+ &#39;ganjar pranowo vs erik thohir indonesia padang &#39;,
+ &#39;jaggan lupa pilih tgb calon capr 2024kita lihat tanggal mainyasipaa pasangan ya sllm pendukung patri perindo &#39;,
+ &#39;prabowo subianto &#39;,
+ &#39;bayar tukang survei kubu oligarki ganjar percaya tukang survei tukang bohong &#39;,
+ &#39;saya pemilih pdip 2024 menyes terpaksa saya memilih partai capr yang tidak hubungannya dengan pdip &#39;,
+ &#39;rk basinya jawa barat tapi anak muda indonesia tau indonesia bukan pulau yang berpasangan rk pemenangnya kecuali ani &#39;,
+ &#39;ri1 2 bpk prabowo sama mbak puan maharani tk &#39;,
+ &#39;dipimpin penghianat seolaholah pro rakyat &#39;,
+ &#39;partai tak ukuran lojik gol merata kepada jelata sikay &#39;,
+ &#39;pakai pb ridcikaurat bersambung kokoh kuat merata tidak gila h thp2 munc pesat rendah hati merata &#39;,
+ &#39;p prabowo gandengan p mahfud md indonesia aman adil bersih tiku yang menggerogoti uang rakyat &#39;,
+ &#39;yang untuk kebaikan nkri sketsa jokri jo &#39;,
+ &#39;pewayangan p ganjar sengkuni lihat matanya p ganjar sinarnya orang licikmend orang yang cinta hidupnya rakyat p prabowo &#39;,
+ &#39;silakan utak atik sih ganjar sih prabowo yang memilih apa ani rasyid baswedan &#39;,
+ &#39;pecinta bola no respect ganjar &#39;,
+ &#39;3 pasangan capr menjadi finall ani jadi menang &#39;,
+ &#39;ganjar eric toher &#39;,
+ &#39;insyaallah rakyat dukung prabowo &#39;,
+ &#39;prabowo erick thohir &#39;,
+ &#39;prabowo kofifah prabowo ridwan kamil insya allah presidenku indonesia2024 &#39;,
+ &#39;perabowo sudah tua pelupa yang muda saja suka melupakan janji2 kampayenya yang sudah rua sudah cari yang muda cerda santun amanah ya ani ahy &#39;,
+ &#39;capresnya enggak mantap afdol ani sebelah rezim sudah belangnya &#39;,
+ &#39;probowo gabung dngn p dipanda presiden &#39;,
+ &#39;ganjar pranowo jo &#39;,
+ &#39;belum pemilihan sudah tauh lemenagnya &#39;,
+ &#39;prabowo erik &#39;,
+ &#39;menolak ganjar pranowo capr &#39;,
+ &#39;kasihan prabowo 2 kali ditipu jokowi 3kali ditipu megawati pilpr enggak kapok2 &#39;,
+ &#39;terbaca pdip nomer duakan &#39;,
+ &#39;hidup prabowoinsyaallah suks pilpr 2024 &#39;,
+ &#39;pakai prabowo calon presiden jangan sama ganjar sudah mala karena u20 kemarin &#39;,
+ &#39;prabowo presiden 2024 &#39;,
+ &#39;prabowo subianto yang terbaik melanjutkan perkejaan jokowi &#39;,
+ &#39;mantap bang nuel bravo prabowo ahok ye &#39;,
+ &#39;ora memilih mak banteng &#39;,
+ &#39;ye prabowo ahok oke &#39;,
+ &#39;yang mengomongkan orang bayar berbohong huwak &#39;,
+ &#39;sipa pasangan probowa menang partai pdip gabung pdip 90kalah aslinya suwara rakya lndonesia yang sebenar nya hancur nya negara 2023 komentar sibuk menguru partai &#39;,
+ &#39;prabowo mantap pasangan dengan cak imin mahfud md aman mantap &#39;,
+ &#39;musnahkan banteng sumpah enggak bak maju indonesia kalo dipimpin sih &#39;,
+ &#39;prabowo for ri 1 2024 &#39;,
+ &#39;bp prabowo berpasangan dengan khofifah &#39;,
+ &#39;pokoknya pilihan pilihan bp prabowo si &#39;,
+ &#39;hasil survey membela yang bayar &#39;,
+ &#39;hoax &#39;,
+ &#39;pdi perjuangan rubah capr jangan ganjarsaya suka gibran ahok &#39;,
+ &#39;pilih prabowo percaya ani presiden &#39;,
+ &#39;survei bayar &#39;,
+ &#39;lihat saja tanggal mainnya teman teman enggak sesuai harapan wkwkwkwkwk &#39;,
+ &#39;anislaaaa &#39;,
+ &#39;masuki pakai andika perkasa mntapp &#39;,
+ &#39;ani lari surv no 3 ta0i insuallah presiden 2024 &#39;,
+ &#39;sepertinya rakyat tida peduli apapun yang ganjar elektabilitasnya dibilang prestasi prestasinya survey bayar &#39;,
+ &#39;ani baswedan prabowo subianto insyaallah amanah memimpin bangsa &#39;,
+ &#39;hahahaha surveinya top diata kebingungan menentukan cawapresnya ani is the best &#39;,
+ &#39;ganjar no pada netizen bxk yang pilih anisapa bohong &#39;,
+ &#39;pilih ganjarrrr &#39;,
+ &#39;prabowo presidenku &#39;,
+ &#39;setuju kalo ani memilih kandidat yang membantu kemenangan jawa jawa timur &#39;,
+ &#39;pkb yeswapr cak imin noway &#39;,
+ &#39;prabowo ridwan kamil kalau mimpin indonesia maju aman tentram &#39;,
+ &#39;satnya prabowo presiden &#39;,
+ &#39;bpkani ahi the real gread aaadan tawar lagikedua tokoh pilihan rakyat indonesia separo &#39;,
+ &#39;kalau usul prabowo ridwan kamil oke pembangunan maju &#39;,
+ &#39;pasang taruhan capr 2024pasang 1 juta rupiah saja pilihan ku masih kurahasiakan kucari bursa taruhan pilpr indonesia 2024 onlinemudah2 an pilihan ku menang 1 putaranbiasanya bursa judi onlin australia buka pasaran nya oiya masih undecid voter &#39;,
+ &#39;ani rasyid baswedan terbaik dari calon yang &#39;,
+ &#39;erik tohir capr sandiaga uno rakyat indonesia mendukung presiden wakil presiden &#39;,
+ &#39;pganjar pmahpud pganjar terbukti suks membangun jawa pmahpud orangnya bersih cocok bangsa &#39;,
+ &#39;prabowo dan mahfud md yang setuju komen &#39;,
+ &#39;survei buzer okelahkenapa karena ketakutan memuncak popularita ani sulit menandangi nya jalan nya dibuatlah survei uban bowo tenggelam kenyataan nya tinggal kepala yang belun tenggelam &#39;,
+ &#39;bpa parabowo kau menang banten cawaper asli orang banten terima kasih apa &#39;,
+ &#39;tetap ani &#39;,
+ &#39;kamipecinta sepakbola indonesiadan simpatisan pdiptapi tidakjadinya pildun indonesiamaka beralih calon capr yang laintidak dilirik lagioleh &#39;,
+ &#39;dibayar berapa ya &#39;,
+ &#39;karena umur prabowo wapr saja &#39;,
+ &#39;survei bayaran memang &#39;,
+ &#39;prabowo dipasangkan rhoma irama &#39;,
+ &#39;ayo pilih capresnya pilih caleg nyapemilu 2024 &#39;,
+ &#39;papua dukung prabowo erick &#39;,
+ &#39;yang sudah merugikan negara 3t fasilita pidun gara-gara alasan enggak jla jangan pilih &#39;,
+ &#39;p di i p kakak ber adik gerinra ingan pemilu &#39;,
+ &#39;pengamat abal-ab sok didengarkan egp &#39;,
+ &#39;prabowo semoga terwujud paganjar we gubernur saja ra maju angel apa &#39;,
+ &#39;prabowo tgb &#39;,
+ &#39;prabowo jangang gabunh dengan calon pdi &#39;,
+ &#39;prabowo erik tohir mantap &#39;,
+ &#39;seheboh apapun calon 2024 yang dukung penuh amerika serikat yahudi iluminati presiden 2024 pilihan rakyat kepentingan 2 poro pengendali dunia amerika china &#39;,
+ &#39;duluuuu ketahuan menggagalkan piala dunia perintah mega &#39;,
+ &#39;mahfud md for presiden &#39;,
+ &#39;calonya presiden 2024kami rakyat ani baswedan pilihan terbaik &#39;,
+ &#39;cocoknya prabowo gandengan konfifah kaum nadiyin kabar jateng jatim jakarta banten lampung padang lombok ujung pandang kalbar kalsel sulteng palembang &#39;,
+ &#39;kalo prabowokofifah vs ganjarahok vs anissandi &#39;,
+ &#39;orang indonesia timur mendukung prabowo subiantosudah benci ganjar menggagalkan piala dunia u20 &#39;,
+ &#39;arah pilihan pilpr mengikuti arah pilihan jokowisemoga jokowi tekatekipartai bukan pilihan pemimpin yang &#39;,
+ &#39;sayang prabowo dibelakangnya sih ikan buntel yang menggeru keputusan pemerintahprabowo tidak berani memecat sih ikan buntel iniorang kuat mendukung ormas2 intoleran seperti htifpi prabowo terhambat orang bercokol partai gerindra &#39;,
+ &#39;pakai erick thohir semoga capr 2024 &#39;,
+ &#39;ya allah sih ani semoga tidak terpilih capresknp ani yang memilihnya yatahu sendirilah politik identitasnya &#39;,
+ &#39;ani ahi jawa timurjawa tengah enggak yang milihpasti kalah suara kemarin warga surabaya dicuekin &#39;,
+ &#39;ganjar presiden palestina saja kalimantan enggak pilih ganjar &#39;,
+ &#39;cerbon dukung prabowo ri 1 2024 &#39;,
+ &#39;ptabowo hapipa &#39;,
+ &#39;prabowo gibran bida menang &#39;,
+ &#39;prabowo menang inssal as h 2024 &#39;,
+ &#39;ganjar ridwan kamil &#39;,
+ &#39;ganjar t a p i menolak israel prabowo ahok ye ye ye &#39;,
+ &#39;prabowo dengan sultan bu chofiwah indarparawasa utk2024 mumuni ri &#39;,
+ &#39;dukung prabowo &#39;,
+ &#39;pilih rezim di tahu 2024 &#39;,
+ &#39;ya kalo saya menilai prabowo yang pa brpasangan kofifah menang prabowo presiden sudah enggak yang nglahin &#39;,
+ &#39;aduh tukang surp bayaran &#39;,
+ &#39;survey mar &#39;,
+ &#39;ganjar enggak yang nyambut unggul enggak salah itu &#39;,
+ &#39;kalo lihat surv lapangan unggul yang menang culun negara konoha cebong &#39;,
+ &#39;mantap pakai ane hindari surv balab &#39;,
+ &#39;dukung ganjartapi kejadian kemarensaya alihkan keluarga pilih prabowo &#39;,
+ &#39;manapun pilih prabowo harga mati &#39;,
+ &#39;ganjar pembangkang jokowi sayang no tapi him &#39;,
+ &#39;sehebatnya ganjar btal fifa enggak tapi orang berpikir ganjar yang salah enggak &#39;,
+ &#39;mari pilih pemimpin yang terbukti kerjanyamengayomi rakyat dicintai rakyatbiar tidal menyes &#39;,
+ &#39;prabowo subianto mahfud md &#39;,
+ &#39;ganjar hati &#39;,
+ &#39;ani bwd capr amanah cerda &#39;,
+ &#39;pulau dewatabali dukung prabowo 2024 &#39;,
+ &#39;gu muhaimin ye &#39;,
+ &#39;ganjar nolllll &#39;,
+ &#39;ganjar promowokerjanya pencitraanbanjir genuk saja langganansungai genuk dansekitarnya dngkaljln ditinggikan sungai didangkalknrmh warga kelelep jlnwarga pusingtimbngan dibebaskan ajng penyelundupan mudah sekalimemanh pakai prabowo yang bi meneruskan kepemimpinan pakai jokowibenar mbah gusdur pakai prabowo yang ikhla nkriayo pakai prabowojadikan nkri negara maju &#39;,
+ &#39;prabowo mhfud &#39;,
+ &#39;palsu &#39;,
+ &#39;demokrat dukung prabowo pilpr 2024 &#39;,
+ &#39;pesan wni pilihlah capr prabowo dukung koalisi jokowi nkri &#39;,
+ &#39;prabowo mantap &#39;,
+ &#39;ganjar gebyarnyayg bagu &#39;,
+ &#39;tukang ramal panen raya menjelang pilpr 2024 &#39;,
+ &#39;udalah prabowo sudah bolon door masih balon coor &#39;,
+ &#39;slagi grindra pali zonsaya memikir-mikir pilih prabowojika sih zong klaut pilih prabowo &#39;,
+ &#39;negara maju dan rakyat sejatra pasangan yang cocok ganjar pranowo dan prabowo berdua nasinali ganjar pranowo gubernur terbaik indonesia ani dan sandiana ungo keturunan arab yaman memimpin negara repoblik indonesia memilih pribumi asli &#39;,
+ &#39;ganjar terbaik calon presiden nkri &#39;,
+ &#39;survei abal-ab &#39;,
+ &#39;indonesia calonkan prabowo berketurunan cina &#39;,
+ &#39;palsumal menonton nya &#39;,
+ &#39;ahok prabowo good fren &#39;,
+ &#39;survei mana enggak ngrsa survei gua jangan-jangan goib nih mah &#39;,
+ &#39;prabowo sih dominan &#39;,
+ &#39;cawapresnya koalisi perubahan exi kemenangan rakyat cerda memilih pemimpin yang membawa perubahan &#39;,
+ &#39;ani ri 1 2024 &#39;,
+ &#39;pendukung setia ani &#39;,
+ &#39;enggak pakai mahfud &#39;,
+ &#39;yang dukung kandidat dari pdip maka dosa titik &#39;,
+ &#39;ani ahi adalah pilihan yang cemerlang n indonesia akan maju n adil &#39;,
+ &#39;rakyat sudah kcw sama prabowo yang pada rezim yang zolim jadi jangan hrp prabowo akan menang &#39;,
+ &#39;sayamah dukung pasangan ganjar ridwan kamil &#39;,
+ &#39;yang potensi sosok tgb bro &#39;,
+ &#39;pole edan lo bayar surpai membuktikan kok &#39;,
+ &#39;kalo skarng pemilih jokowi sebelum nya memilih prabowo teru yang memilih ganjar elektabilitasnya pale surv pesanan ya bang lucunya negriku pemilu belum dilaksanakan hasilnya bisa diketaui &#39;,
+ &#39;pilih pdip enggak perubahanmalah rakyat indonesia bertambah yang miskin pengangguran putu kerja buta hurupyg kayak kayak yang miskin bertambah miskin &#39;,
+ &#39;bravo ani ahi &#39;,
+ &#39;prabowo jangan berpasangan dengan ganjar &#39;,
+ &#39;ganjar pakai mahfud md &#39;,
+ &#39;prabowo mencari wakil toko nahdatul ulama untuk merebut suara jatim jatengkalau prabowo merebut suara jatim jate ng pastikan prabowo menang &#39;,
+ &#39;sekeluarga pilih prabowoinsya allah depan sekeluarga pilih ani &#39;,
+ &#39;rayat sudah pintar &#39;,
+ &#39;ganjar tidak menang kun fa yan kun amin &#39;,
+ &#39;menang prabowo kun fa yan kun amin &#39;,
+ &#39;ridwan kamil sandiaga &#39;,
+ &#39;orang pintar memilih pilih pintar ani baswedan &#39;,
+ &#39;wkwkwk kei pero &#39;,
+ &#39;insa allah bpk prabowo menang amin &#39;,
+ &#39;untuk pilpr 2024berikrsempatan untuk memimpin bangsa negara prabowo diband yang yang segala-galanya &#39;,
+ &#39;survei lu hehehee kasihan deh lu &#39;,
+ &#39;kepedean sudah khianati pemilihpendukung nya juga sekarang mengharap suara lagi maaf ya &#39;,
+ &#39;bpk prabowo maju teru &#39;,
+ &#39;survei tidak mewakali suara rakyat &#39;,
+ &#39;yang nyata jujur beranta korupsi adalh mahfud md tenyata rakyat masih belum pada pndai menilai mana yang layak mana yang tidk layak hidup mahfud md &#39;,
+ &#39;jangan lupa kawan surv bohong doangini surv pessanan &#39;,
+ &#39;prabowo ganjar oke ganjar tidak salah israel melenyapkan palestina ribu orang palestina bunuh israel pbb diam tidak adil tanah jarah orangnya bunuhi lu 20 gagal ganjar fifa tidak aman takut kanjuruan &#39;,
+ &#39;ku sing cocok prabowo hopipah &#39;,
+ &#39;ani bravo top markotop jateng &#39;,
+ &#39;ganjar diata prabowo wkwk &#39;,
+ &#39;enggak nyoblo pganjar sepak bola jadi anak tiri &#39;,
+ &#39;inyong asli jateng ngapak dukung pakai ani wakilnya pakai ani yess &#39;,
+ &#39;ani presidenku 2024 &#39;,
+ &#39;urutan ani no 3 takuti lawannya yang menjeg ani presidenyg anehnya ani yang jegal yang tidak ya pendukung ganjar prabowo santai enggak panikkan jagonnya elektabilitasnya jangan-jangan elektabilita ani yang &#39;,
+ &#39;hihi tau dibayar nih tukang survei &#39;,
+ &#39;lupa mahfud md kalo diusulkn juga jadi cawapr nya &#39;,
+ &#39;kok ani berpasangan dengan sandi skip enggak baha padah ani sandi menang pilkada dki sandi rebutan aniesganjar cawapresnya &#39;,
+ &#39;prabowo tgb pa pribadi setuju tgb indonesia sudah pendukung ulama pondok pesantren tokoh masyarakat sabang merauk menang insya allah menang &#39;,
+ &#39;harun masiku presiden indonesia merdeka &#39;,
+ &#39;prabowo cocok nya berpasangan mahfud md &#39;,
+ &#39;kalo ganjar balikin tuan rumah piala dunia pilih ganjar kalo enggak ya no &#39;,
+ &#39;ahok pilihan ku orang jadi pemimpin indonesia &#39;,
+ &#39;kampr loh menjadikan gagalan indonesia tuan rumah piala dunia &#39;,
+ &#39;ketiga calon belum yang pa hati &#39;,
+ &#39;permainan politik survei &#39;,
+ &#39;ganjar nyungseb &#39;,
+ &#39;rakyat bersatu dukung ganjar pranowodi sandingkan mahfud md lanjudkan estafet jokowidodo &#39;,
+ &#39;ani baswedan novel bamukmin takbir &#39;,
+ &#39;fan banget prabowodan berharap prabowo menang presidenkemudian prabowo calon presiden lagisetelah lihat prabowo menteri jokowi enggak memilih beliau anak buahnya jokowi &#39;,
+ &#39;ganjar presidenku &#39;,
+ &#39;prabowo yang hati ikhla negerawan sejati beliau presiden indonesia &#39;,
+ &#39;prabowo ahok mantap &#39;,
+ &#39;ahok kalo enggak andika perkasa hehe prespetif lo &#39;,
+ &#39;ya ujian bola milik erofa brazil yang hak veto italia setandart ganda rusia hukum isra el beba semoga kedepan acara yang israel enggak demo dari 212 pk acara aman terkendali enggak gangguan terorism keamanan bin dll antisipasi koordinasi gubernur mendagri presiden berjalan &#39;,
+ &#39;ha ha ha partai berkoalisimau terserah milik politikusnamun rakyat hatidan rakyat cerdasakan memilih orang orang berkualita beretika cerda elegan terhdp masyarakatdan anehnya rakyat terpengaruh dengan politiku yang berhurasemoga kekuatan menjaga nkri memperkuat persatuan kesatuan negara republik indonesia &#39;,
+ &#39;sudah 3x prabowo kalah ajakali pilih ani dulusiapa tau menang &#39;,
+ &#39;ganjar pasangan dengan mahmud mdjosjo jospilihanku &#39;,
+ &#39;insa allah muslim sejati tidak pilih aniesjk yang pilih ani manusia munafiq &#39;,
+ &#39;survey berbayat lihat kenyataan unafik &#39;,
+ &#39;gp hati rakyat capr pdip 2024 &#39;,
+ &#39;prabowo pilihan &#39;,
+ &#39;menang prabowo berasangan ganjar diendor full jokowi pdip cawapr ganjar menang berpasangan kelompok konserfatif hidayat nur wahid habib rizieq shihab ani susah menang berpasangan &#39;,
+ &#39;duet terbaik pasangan ani mahfud md &#39;,
+ &#39;orang manyatakan survii anissa no 3 lihat kenyaaannya rakyat rat rat suka ani surviv aba aba &#39;,
+ &#39;presiden jokowidodo pindah hati apa prabowo subianto mendukung apa prabowo subianto calon presiden indonesia 2024 &#39;,
+ &#39;cari pasangan yang dipasangkan saja cari judul &#39;,
+ &#39;ganjar pranowo erick tohir mantap &#39;,
+ &#39;enggak jokowi pindah ganjar pranowo ganjar &#39;,
+ &#39;mohon maaf prabowo kowalisi pdipkalau menangrakyat meninggalkan pdipkarena ulah kepala daerah pdip menolak kehadiran israel lu 20 &#39;,
+ &#39;prabowo deh &#39;,
+ &#39;yang taat dan searah pmbangunan dengan jokowi yang di pilih rakyatsatu putarankami tunggu jokowi perintah &#39;,
+ &#39;entar bikin survay abal abal kesamb petir kwkkkwkk &#39;,
+ &#39;rakyat enggak survay kwkjwkk &#39;,
+ &#39;masyarakat sudah survay pesenan kwkwkwkw &#39;,
+ &#39;pilih ani dan prabowo dan mahpud md &#39;,
+ &#39;nitip tgb for indonesia &#39;,
+ &#39;ramalan gu dur kenyataan prabowo presiden diusia aenja &#39;,
+ &#39;semoga indonesia maju terbelah sisi sara &#39;,
+ &#39;presiden megawati urung beliau ketua pdi ptetapi kader yang menjunjung indonesia yang berebut kalangan ekskutifsebenarnya biar memadai langkah partai di dukung dukung biar menjamin dongkebanyakan pendapat kegagalan yang &#39;,
+ &#39;surfai bohong luuur &#39;,
+ &#39;loyali ganjar gagalnya pildun u20 alihkan dukungan pranowo &#39;,
+ &#39;utak atik p prabowo kalah &#39;,
+ &#39;cawapresnya mbak titik sajamantaappp &#39;,
+ &#39;pengin muntah mendengarkan lembaga survey &#39;,
+ &#39;masyarakat dibohongi lembaga survei rakyat indonesia percaya lembaga survei yang dibayar kepentingan individu calon menggir salah calon pilihlah capr cawapr yang memperhatikan kepentingan masyarakatjangan pilih capr yang gari kera &#39;,
+ &#39;kaum mudajangan pilih ganjar membunuh jiwa semangat kaum muda &#39;,
+ &#39;umr indonesia 3 juta rp heboh nyapresapa program naikkin umr 20 juta tahjangan andalkan elektabilitas2 bikinan surveyor pepesan kosong &#39;,
+ &#39;benaran survey pemikiran lok survey live ajakayaknya pemikiran &#39;,
+ &#39;fakta lapangan ani yang terdepan &#39;,
+ &#39;orang tahukita kalo prabiwo numpang hidupnumpang elektabilita dipmrthan jokowirestupersetujuan jokowi hanya basa basi ajacoba nantisaya2jokowi2tdk mungkin jokowi dukung diluar pdip &#39;,
+ &#39;tetap pakai ganjar yang tetbaik &#39;,
+ &#39;prabowo khofifah dukung &#39;,
+ &#39;tidakmau dipirang prbowo i youforef indonesia &#39;,
+ &#39;pribadi pilih prabowo &#39;,
+ &#39;ganjar no pilih pemimpin yang membedakan olah raga politik yang logika picik otaknya &#39;,
+ &#39;ra percoyo survemu buussss &#39;,
+ &#39;percaya sorpei nadion &#39;,
+ &#39;2024 kapan p 3 pemilumenghindari akar rumput hukum akar rumput &#39;,
+ &#39;survey peka aa &#39;,
+ &#39;prabowo ayo semangat &#39;,
+ &#39;prabowo pancasilai &#39;,
+ &#39;akalan akalan lihat masyrakat semua pilih ani rakyat perubaahan enggak saja ani ganden sapa surv abak abal enggak tau n &#39;,
+ &#39;prabowo ahox &#39;,
+ &#39;bali ektabilita prabowo partai karpet merah kepemerintahannya gagal &#39;,
+ &#39;ani baswedan ri 1 &#39;,
+ &#39;ngambil survai tiduran tuh survai enggak akurat &#39;,
+ &#39;sebarkan kebenaran keadilan ibadah amin 3 psg kandidat capr yang berkompetisi jujur &#39;,
+ &#39;pasangan perabowo ahok pa &#39;,
+ &#39;penolakan ganjar piala dunia u20 saya prabowo puan maharani layak &#39;,
+ &#39;diluar pemerintahan period biar perubahan &#39;,
+ &#39;nampaknya survey cocok &#39;,
+ &#39;prabowo menang dalam putaran pilpr 2004 mendatangjika bpk prabowo meninggalkan barisan pdip n gpmsi pemimpin laenya negeri yang berpengalaman n berjiwa nasionalism &#39;,
+ &#39;kecurigaan jokowi sejatinya naikkan elektabilita puan maharani usungan beliau mengendor prabowo tumbal publik ragam penilaian prabowo operasi senyap puan pendekatan publik diharapkan jokowi pilpr diikuti prabowo vs puan maharani asumsi jokowi puan maharani memenangkan pilpr &#39;,
+ &#39;betol rakyat &#39;,
+ &#39;ganjar pranowo prabowo subianto mantap orang pribumi &#39;,
+ &#39;kalao prabowo presiden rakyat prabowo coba kerumah alamat rumah dsn ngaduman rt 03 rw 04 ds tajuk kc getasan kab semarang jateng trimah kasih &#39;,
+ &#39;mantap badai kemesraan hati pikiran jiwa utuh solid bersatu dukung ganjar pranowo capr the best of the best peneru presiden jokowi mimpin nkri program kerja pembangunan jokowi yang pro rakyat dilanjutkan ganjar pranowo capr harapan bangsa rakyat indonesia the next jokowi &#39;,
+ &#39;ganjar elektabilitasnya no 1 survai abal-ab sedulur survai recehan juga urusi survai kenyataan es nyata upaya penjegalan ani shg survai bayaran keluyuran &#39;,
+ &#39;runner up &#39;,
+ &#39;mudah dibohongi survey survei cenderung berbohong &#39;,
+ &#39;jijik banget gua melihat sih uban &#39;,
+ &#39;kecewa ganjar pranowo &#39;,
+ &#39;kasihan prabowo kali macungnyalon capr kali mentok alia gagal melulu ngene ya sarankan untuk melobi ganjar pranowo pasangannya pilpr 2024 yang yang kartu mati penggembira saja begitu lo heheh &#39;,
+ &#39;pilih ani &#39;,
+ &#39;prabowokhofifah 2024 &#39;,
+ &#39;ani harga mati &#39;,
+ &#39;kalo rame prabowo kali erickvsani kali ganjarbiar masyarakat menilai yang munafik kitadan gue enggak membayangkan ganjar duet ani pendukung yang berseberangan bersatuini ber andai andai enggak tanggapi seriusdalam politik apapun &#39;,
+ &#39;yang bayar ya survey hihi &#39;,
+ &#39;prabowo pemimpin sesungguhnya &#39;,
+ &#39;cawapr disamp menambah elektabilita capr menggeru suara calon lawan bagu cawapr p prabowo adapah khofifahyang mengurangi suara pdip nu menutup kubu pani mendapatkanvdukungan nu &#39;,
+ &#39;pilih presiden pilih kesukuan kedaerahan pilih presiden yang bikin rakyat tentren ekonomi keluarga bahagia rakyat &#39;,
+ &#39;pilih demokrat pk nasdem usung ani baswedan ahi presiden wakil presiden pilihan rakyat karena rakyat enggak jatuh lubang yang menderita &#39;,
+ &#39;loyali pdip semenjak kejadian kemarin terpaksa alih haluan partai capr diluar ganjar &#39;,
+ &#39;kecewa ganjar pindah ani ayo dukung prabowo &#39;,
+ &#39;pasangan ideal prabowo machfud md &#39;,
+ &#39;aceh p ani for presiden 2024 &#39;,
+ &#39;setuju pilpr 2024 cocok presiden ri ganjar prabowo wapr ri ganjar menolak piala dunia u20 inikrn ormas2 ya namanya politik maaf salah &#39;,
+ &#39;bohong survei &#39;,
+ &#39;dukung pakai ganjar &#39;,
+ &#39;pakai ganjar &#39;,
+ &#39;pembawa acara host plonga plongosalah salah menyebut &#39;,
+ &#39;ketiga nya prabowo subianto yang untuk pilih presiden 2024 &#39;,
+ &#39;ani ahi hai bosss &#39;,
+ &#39;ani baswedan mantap &#39;,
+ &#39;hidup partai perindo persatuan indonesia &#39;,
+ &#39;duet terbaik prabowo conni rahakundini vision indonesia maju indonesia berdaulat &#39;,
+ &#39;suka auranya ganjar jiwa kepemimpinan nya nasion pa &#39;,
+ &#39;pakai prabowo vit pakai mahfud md putaran enggak lawan &#39;,
+ &#39;wocoba adakan survei percaya survei bayaran biar bpk mantap melangkah &#39;,
+ &#39;wakil nya maka lampir saja &#39;,
+ &#39;survey survey masyarakat yang mengerti &#39;,
+ &#39;tibaani mahfud md berpasanganklop lawan politik kalang kabut rakyat 76 memilih ani mahfud &#39;,
+ &#39;orang wara meninggalkan pdi p ganjar merusak impian rakyat indonesia piala dunia u20 &#39;,
+ &#39;prabowo erick tohir &#39;,
+ &#39;tanggung jokowi 2period mensejahterakan rakyat indonesia dasar kaum bedebah jokowi &#39;,
+ &#39;putar haluan ahawalnya cocok ganjartapi enggak konsisten shg pildun u20 bataljadi pro prabowo &#39;,
+ &#39;butuh presiden yang jadikan boneka oligarki &#39;,
+ &#39;capr yang mumpuni pakai haji prabowo subianto rakyat indonesia sabang merauk obyektif stabil elemen bangsa tk &#39;,
+ &#39;semoga ma ani kemudahan untuk memperbaiki bangsa yang semrawut &#39;,
+ &#39;indonesia timur mendukung bpk prabowo subianto ri 2024 &#39;,
+ &#39;saya sekeluarga dukung ganjar &#39;,
+ &#39;ganjar kali kanjeng xkovivah xwi yakkin remuk kuimahfud bisa &#39;,
+ &#39;presiden kenak jawo sudah dipatok &#39;,
+ &#39;prbowo erik &#39;,
+ &#39;tenggelamkan pdip pk orma monaslimin 212itulah pembalasan yang sempurna dari suport timna indonesia &#39;,
+ &#39;mhn maaf jawa timur jangan gaungkan enggak pendukung nya rakyat kewenangan tersendiri dari hak pilihnya jangan pandu kade nya kejadian jawa timur &#39;,
+ &#39;saya dukung calon presiden yang enggak nolak piala dunia u20 indonesiayg menolak piala dunia saya enggak mau dukung &#39;,
+ &#39;prabowo ok ani ganjar no way &#39;,
+ &#39;prabowo mahfud joss &#39;,
+ &#39;untuk kalah om wowojgn sampai pendukung bikin bawa perasaan kaek malu elit berpendidikan kalah mengambek bikin rusuh &#39;,
+ &#39;nkri harga mati prabowo presiden indonesia &#39;,
+ &#39;nex presiden indonesia prabowo &#39;,
+ &#39;rela pulang kampung pilih prabowo &#39;,
+ &#39;prabowo presiden indonesia &#39;,
+ &#39;dukung mahfudz sri mulyani &#39;,
+ &#39;prediksi 1 ani khofifah 2 prabowo erick3 ganjar ridwan &#39;,
+ &#39;sok tau sok pintar yang nerangin simulasi itu cuma pendapat situ &#39;,
+ &#39;survei 2 aduh kok enggak ngaruh &#39;,
+ &#39;takbiiiirrr &#39;,
+ &#39;pilih pani saja ma &#39;,
+ &#39;prabowo pemimpin negara yang ucapakan almarhum gusdur &#39;,
+ &#39;santai ajayang capr setahun saja wakil dirubahbisa wakilnya pa &#39;,
+ &#39;ganjarmenang 2024 ri 1 &#39;,
+ &#39;pilih kader pdip suram negara &#39;,
+ &#39;jowo rak nyoblo ganjar &#39;,
+ &#39;prabowo mahfud lebih oke &#39;,
+ &#39;suara prabowo kegerung ani ahi lihat saja pilpr 2019 prabowo dukung pk 212 dukungan cabut 212 pk &#39;,
+ &#39;mend prabowo ani &#39;,
+ &#39;dukung prabowo ye ye &#39;,
+ &#39;pecinta sepak bola indonesia 2024 wajib pilih prabowoy ye &#39;,
+ &#39;pilih ganjar blunder indonesia gagal tuan rumah sepak bolalagi ganjar nurut pdip jokowi &#39;,
+ &#39;prabowo ahokduet terbaiksetuju &#39;,
+ &#39;prabowo mahfud md sudah mala sama pdi gara-gara dpr krmarin &#39;,
+ &#39;koalisi namanya enggak mengalahkan ani karena rakyat paham yang merusak negara &#39;,
+ &#39;yang pilih prabowohistori latar belakangnya menarikmaaf ya menarik &#39;,
+ &#39;ani baswedan is the best &#39;,
+ &#39;ani baswedan pilihan &#39;,
+ &#39;cocok jangan memilih paratai banteng pdi hancar leburkan impian piala dunia 20 karam hukumnya pilih pdi perjuangan wii tutup &#39;,
+ &#39;tetap bp ganjar pranowo ri 1 &#39;,
+ &#39;ganjar sandiaga uno jawa jawacocok &#39;,
+ &#39;ganjar pranowo ri 1 &#39;,
+ &#39;tukang survai abal-ab bayar oligarki menempatkan ani baswedan urutan fakta lapangan &#39;,
+ &#39;prabowo presiden ku &#39;,
+ &#39;kang emil beroasangan khofifah top lainya no way &#39;,
+ &#39;wowo nasibnya sudah kagak presidenudah berkali kali nyapr allah kagak mengizinkan presidenalloh yang mentakdirkan presidenciri ciri yang presiden rakyat yang mendukung cobaannya dahsyat sabar menghadapi cobaan fitnah rakyat yang bersimpati mendukungnya profesion mengedepankan prestasi pencitraan janji palsudan yang sholeh pintar amanah bohongnyabukan hasil survei uangkarena rakyat kebohongan publik &#39;,
+ &#39;percayadgn survey &#39;,
+ &#39;tetap prabowo presiden sumatra barat hadiirrt &#39;,
+ &#39;tetap pakai ganjar &#39;,
+ &#39;mahfud md ahok &#39;,
+ &#39;pembohonngan rakyat &#39;,
+ &#39;ya allah ancurkanlah penkianat pengkianat bangsa iniaamiiin amin ya rabbal aalamiiin &#39;,
+ &#39;ayo prabowo gibran maju &#39;,
+ &#39;saran prabowo ambil cawapr mahfud md sri mulyani indrawati &#39;,
+ &#39;gara gara nolak israelmimpi anak bangsa batal main piala dunia lu 20 &#39;,
+ &#39;kalo prabowo jokowimantap &#39;,
+ &#39;ah bohong indik survey bayaran enggak masuk akal ani didukung rakyat 70 no 3 ya dibayar ma bikib survey &#39;,
+ &#39;tv cerda &#39;,
+ &#39;prabowo tgb ganjar tgb yang cocok wapr yang pa &#39;,
+ &#39;tv pilih wapr cerda &#39;,
+ &#39;wapr yang ya tgb &#39;,
+ &#39;tv salah yang prabowo tgb &#39;,
+ &#39;wara prabowo tgb &#39;,
+ &#39;ganjar cocok jadi pasangan prabowo &#39;,
+ &#39;prabowo menang &#39;,
+ &#39;cocok prabowo sandiaga &#39;,
+ &#39;peramahprabowo mahfud jo gando &#39;,
+ &#39;pasangan prabowo mahfud md pasanan yang untuk mebereskan carutmarut bangsa &#39;,
+ &#39;ani terbukti pemimpin sopan santun karyanya nyata omong jakarta hebat berkan kepemimpinan &#39;,
+ &#39;pokoknya ganjar pdip keputuanya penolakannya kemarin bikin rakyat bola terkubur impianya inggin indonesia tuan rumah piala dunia orang berpihak rakyat &#39;,
+ &#39;istilah babak belur pa lebih pa kalah telak &#39;,
+ &#39;prabowo maju teruspilpr 2024 &#39;,
+ &#39;serba salahkalaupun piala duniapasti demo ditunggangi politikterutama kesempatan kaum radik rusuh korbannya orang negara enggak terbayang dampaknyaitu panggung kaum radikalkita ambil hikmahnya saja siapbuat pemain semangat tunjukkan kemampuan biar lolo piala dunia tampa tiket gratiskita bisaayo indonesia maju &#39;,
+ &#39;ani the best &#39;,
+ &#39;ganjar erikpassssbgt &#39;,
+ &#39;surveybgm metodenya validita data presidennya hasil survey meluluyg jadi bia diatur &#39;,
+ &#39;maju prabowo dukungmu &#39;,
+ &#39;ani ahi &#39;,
+ &#39;capr cawapr yang mudasebab di samp lincahgesit kreatiftetapi kalau tua berkreatifdan berpikirnya lambatsebab faktor kekurangan &#39;,
+ &#39;pilihan presiden rambut puti yang cocok batalkan tuan ruma piala dunia karena mari batalkan rambut puti presiden 2024 sudah cocok hati rakyat pdip berduka pusat sampai daera 2024 &#39;,
+ &#39;kali setuju sikap menolak israel ganjar &#39;,
+ &#39;kesombongan ganjar menggagalkan piala dunia lu 20maka ganjar enggak capr cawapr pasangan prabowo cocok ridwan kamil adem &#39;,
+ &#39;pdip daera calon dpr kursi pdip hilang gara-gara pildu tuan ruma cabuat fifa akirnya pdip berduka 2024 &#39;,
+ &#39;rakyat pendung pdip berbalik badan prabowo pernyataan prabowo lanjutkan program jokowi kusu ikn 100 prabowo 2024 presiden &#39;,
+ &#39;survei abal abal &#39;,
+ &#39;ani 3 &#39;,
+ &#39;survei orang jawa orang orang jawa rakyat indonesia timur alergi ganjar pranowo memilih calon presiden yang radik ganjar survei pulau jawa orang jawa saudara indonesia jawa &#39;,
+ &#39;ganjar unggul biladi colokkanbisa menang &#39;,
+ &#39;bohong berdosa loh &#39;,
+ &#39;alhamdulillah dukung ani baswedan salam akal sehat &#39;,
+ &#39;berkapasita uji debat terbuka yang berkualita ilmu akademik misi visi tercantum gagasannya berbobot asli ijazahnya &#39;,
+ &#39;ayo prabowo mendukung &#39;,
+ &#39;survey yang unggul ganjar n prabowo tapi kenapa yang diganj ani yang bohong neeh &#39;,
+ &#39;saya memilih ani tapi syarat ya ani haru bikin stetmen menerima israel kalo event olah raga dunia indonesia &#39;,
+ &#39;pdi tumbang &#39;,
+ &#39;semoga ganjar kalahkan &#39;,
+ &#39;ganjar pencitraanklo survey ril yang peringkat 1 ani baswedan 55 2 prabowo 25 3 ganjar 20ini benarganjar sembako masyarakat tdknada yang &#39;,
+ &#39;aniesprabowo &#39;,
+ &#39;potensi menang bsr dukungan rakyat indonesia sudah ditetapkan pilihan sama ani ribu &#39;,
+ &#39;mimpi pecinta bola indonesiadipupuskan ganjar suka ganjar berubah suka ganjar ganjar &#39;,
+ &#39;ahok bagu korupsi &#39;,
+ &#39;halah hai dugaan belum juga menduga nduga &#39;,
+ &#39;setia pilih ani &#39;,
+ &#39;awa salah pilih &#39;,
+ &#39;semoga prabowo khofifahyeni wahidinsyaallah menangamin99x &#39;,
+ &#39;insya allah apa prabowo menang jangan pilih wakilnya &#39;,
+ &#39;prabowo presiden yang sabar dulu &#39;,
+ &#39;prabowotgb pa &#39;,
+ &#39;gua berharap prabowo sih gua pengin perang israel &#39;,
+ &#39;survi abal abal &#39;,
+ &#39;kalo selagi koalisi jokowi orangnya oh jokowi lagi cari perlindungan &#39;,
+ &#39;prabowo pimpinan partai tetu mandiri gp tunduk mega &#39;,
+ &#39;surv menyesatkan brokang surv bayaran &#39;,
+ &#39;semoga ani baswedan ri 1 aamiinn &#39;,
+ &#39;bissmillahirohmanirohim tetap setia solid pilih prabowo subianto calon presiden 2024 semoga amanah nkri amin yra &#39;,
+ &#39;ani nggaklaku kualita pikirannya &#39;,
+ &#39;kalimntan pribadi pilih prabowo &#39;,
+ &#39;survey ngibul ani orang tangguh tanpai partai serang presiden jokowi pdip pemenang pemilu lembaga survey lini menyerang ani membuktikan ani orang yang menyerang ani hancur lembaga survey 2024 pudar ngibul &#39;,
+ &#39;ahi berani cawapr surabaya turun gunung ahi enggak laku &#39;,
+ &#39;suara ntt sebelumx jagokn ganjartpi trjdix penolakan israel main indonesia menjadi berubahjadi sekarang prabowa erik yang inginkan &#39;,
+ &#39;jateng pilih ani &#39;,
+ &#39;ayo bro pilih ganjar prabowo yang memilih brooo &#39;,
+ &#39;4 periyod prabowo mencalnkak pilih pilpr 2024 maju dukung astungk maju teru prabowo &#39;,
+ &#39;indonesia cerda indonesia bijaksana indonesia bersahabat indonesia silaturahmi indonesia bersaudara &#39;,
+ &#39;saya keluarga dari mengidolakan pdi p memilih capr dari pdi p berhubung sudah sudah mengecewakan rakyat mengubur impian anak bangsa saya pencinta sepak bola saya 2024 pemilu ta memilih pdi p capr dari pdi p kecewa saya &#39;,
+ &#39;prabowo maju enggak terpilih &#39;,
+ &#39;file gua prabowo yang bkl jadi ri 1ani bakalan nyungsep &#39;,
+ &#39;biar petuga partai prabowo menghindari istilah petuga partai menghindari pdip biar mengajukan calon saja &#39;,
+ &#39;prabowo layak memimpin negeri semoga tuhan beliau presiden 2024 &#39;,
+ &#39;semoga prabowo subianto kelak presiden ri 2024salam ntt manggarai prabowo &#39;,
+ &#39;surfei abal abal &#39;,
+ &#39;dukung ani &#39;,
+ &#39;pokoknya mudah-mudah memilih basi pdi &#39;,
+ &#39;memperhatikan seolah2 pengamat penel sengaja mengikutkan puan menarik &#39;,
+ &#39;ganjar puanprabowa puanganjar erikprabowo erikani kopipaganjar kopipa &#39;,
+ &#39;survey nya realisti tuh beda kondisi &#39;,
+ &#39;haramkan pilih ganjar &#39;,
+ &#39;sekeluarga dukung ganjar &#39;,
+ &#39;enggak survey nya bohong ah tukang survey nya &#39;,
+ &#39;yang pent pakai prabowo jangan dipasangkan dengan yang menolak pildun lu 20 &#39;,
+ &#39;prabowo cak imin &#39;,
+ &#39;ani baswedan saja wapr nya beba erik yang gila jabatan melombi piala dunia sehinga gagal &#39;,
+ &#39;prabowo ri 1 &#39;,
+ &#39;pole abal abal yang sesuai dengan pakta dilapangan &#39;,
+ &#39;ganjar ga pol &#39;,
+ &#39;prabowo erik tohir prabowo muhaimin pokoknya no ganjar dimanapun posisinya no ganjar no pdip mampuuuuuusssss raimu &#39;,
+ &#39;buuueeeenaaarrr prabowo jangan berpasangan dengan ganjar apapun alasannya kalo berpasangan dengan ganjar saya pecinta bola ind tidak mendukungmu &#39;,
+ &#39;95kmenangan prabowo sandingkan gibran &#39;,
+ &#39;presiden partai pdipsurvei semoga lancar tamba bayarannya &#39;,
+ &#39;terbaik cawapr prabowo mahfud md atau yusril untuk penyumbang suara kemajuan bangsa &#39;,
+ &#39;capresnyasemua ani &#39;,
+ &#39;pakai prabowo presiden indonesia &#39;,
+ &#39;enggak percaya orang &#39;,
+ &#39;survi penipu memalukan &#39;,
+ &#39;survi amplop memalukan &#39;,
+ &#39;prabowoer maju indonesia &#39;,
+ &#39;wadul &#39;,
+ &#39;ganjar kena kutukan israel prabowi ajan melupakan jasa israel israel sulit prabowo kalahkan ganjar &#39;,
+ &#39;prabowo ganjar &#39;,
+ &#39;ntt prabowo &#39;,
+ &#39;mencoblo ganjar pranowo pemilu 2024dan pdip karena mengecewakan rakyak indonesia &#39;,
+ &#39;profahparbowo khofifah &#39;,
+ &#39;ganjar ahok pilihan rakyat &#39;,
+ &#39;prabowo jadi presidentapi gagal kalo berpasangan dengan ani &#39;,
+ &#39;fadfatalfr rider cluppialahestek uipost kariranali kampu &#39;,
+ &#39;israelmodarosukur &#39;,
+ &#39;pusatpilperspusathestek cnnocbccnbcbccbbcdi jeda prosesi ketukhestekmymkmah kamu mahrekomendasihestekjorjortolbi molhoshostajukdukcspilpusatniknipletopdesta ra tra &#39;,
+ &#39;tuan perabowo ibuk khofifah jabar dki jatim sumatera &#39;,
+ &#39;muunngkinlah cbu hopihdah pasangan pembohong &#39;,
+ &#39;jangan dkg partai pdp &#39;,
+ &#39;ayo dukung prabowo jangan dkg ganjar nanti pnr jokowi prsk ekonomi rakyat seperti jokowi smnjk jokowi presiden makin banya kejadian banyak yang tewa banyak kasus2 seperti smb ayo kita dkg prabowo prabowo yang jojok jadi presiden 100 persen &#39;,
+ &#39;pilihan jokowi pilihan terbaik bangsa indonesia kedepannya &#39;,
+ &#39;prabowo saja sandiaga lagi pasangkn tapi kau nurot hati kami2 tetap memilih ane bida pandapat itu biasatp jalik2 n yang &#39;,
+ &#39;yang memilih rakyat jadi lum pastikan &#39;,
+ &#39;survei omwkjwkwk &#39;,
+ &#39;prabowo maju &#39;,
+ &#39;mantap bpk ganjar &#39;,
+ &#39;mahfud md ajuin &#39;,
+ &#39;prabowo enggak laku percaya survey bayaran &#39;,
+ &#39;enggak ngaruh piala dunia enggak indonesia hidup tetap begini begini saja &#39;,
+ &#39;mimpi wowo cs genjergenj menang pilpr &#39;,
+ &#39;survei pesanan bukanmasyarakat rakyat yang disurvei &#39;,
+ &#39;capr papua saudara negara samosir kepingan sorga jangan jawa melulu &#39;,
+ &#39;erick thohir maju truss &#39;,
+ &#39;coblo tgb kesatria memimpin ri suku sasak lombok meluruskan &#39;,
+ &#39;pilih tgb satrio piningit tunggu 2 matahari timur bersinar terang benderang &#39;,
+ &#39;surv opo kui mosok sono goro2 calon capr kok tetap diata teru ra masuk akal &#39;,
+ &#39;all ini prabowo subiantojangan berkoalisi banteng pleas &#39;,
+ &#39;prabowo yesss &#39;,
+ &#39;capr nya prabowo tapi cawapr nya bukan pdip ga pol &#39;,
+ &#39;mahfud md ye &#39;,
+ &#39;pilih prabowo tapi enggak menang2 &#39;,
+ &#39;kunci duduk nya presiden ri 1ada rakyat diseluruh indonesiabkn parpolrakyat yang kuasa dinegri &#39;,
+ &#39;survei untuk 2024 nantipengganti pakai jokowisdh bpk prabowo untuk ri 1 2024 nantikiranya jejak pakai prabowo menyamai kerja pakai jokowidekat dengan rakyat kecilselalu blusukan daerah diseluruh indonesia &#39;,
+ &#39;rakyat tidak percaya surv berband terbalik dari data yang miliki prabowo diata angin &#39;,
+ &#39;ganjar pasangkan koster &#39;,
+ &#39;caper yang berjanji terapkan undang2 hukum mati koruptor orang nya pastikan terpilih orang nomor 1 indonesia indonesia maju2 koruptor indonesia tingi peringkat 96 negara terkorup dunia &#39;,
+ &#39;indra dewa suharto pilih ibupuan maharani capr ganjar wapr merdekamerdekamerdeka &#39;,
+ &#39;sekedar meluruskan acr kemarin kib merapat kir acara kubu kib acr buka puasanya kapan &#39;,
+ &#39;pdip ahok alia basuki cahya purnama cocok presiden &#39;,
+ &#39;prabowo yang tunggu-tunggu saja yang kenal karena adalh keluarga pakai suharto &#39;,
+ &#39;prabowo ahok 2024 is thebest &#39;,
+ &#39;yang kang emil nya &#39;,
+ &#39;surv dibayaritu bicara bayaran prabowo &#39;,
+ &#39;gajar ridwan kamilmeraup pemilih pulao jawa &#39;,
+ &#39;pprabowo dengan p mahfud md &#39;,
+ &#39;survai bayar &#39;,
+ &#39;prabowo yeni wahidprabowo chofifah &#39;,
+ &#39;pasangan calon nama ganjar pranowo sudi memilih nya &#39;,
+ &#39;pakai ganjar biang kerok batalnya tuan rumah fiala dunia rakyat kecewa &#39;,
+ &#39;lembaga survei teruji dengan ilmuanya kepentingan financi tergantung yang bayarmasih ragukan &#39;,
+ &#39;yang kalah 3 kali jadi penonton &#39;,
+ &#39;presidennya aku pilih ani baswedan ani presiden hanculah bangsa &#39;,
+ &#39;masyarakat timur n sudah bulat komitmen tidak pilih capr bermuka &#39;,
+ &#39;prabowo cocok berpasangan dengan ridwan kamil &#39;,
+ &#39;kalo p prabowo berpasangan sih ganjar enggak menangcari pasangan ganjar &#39;,
+ &#39;2024 pakai prabowo pakai pesiden gajaryg deh merusak timna &#39;,
+ &#39;dukungan pilihan terbaik bpk h prabowo subianto presiden ri1 20242034 &#39;,
+ &#39;ganjar peranowa &#39;,
+ &#39;preeet survai enggak salah prabowo &#39;,
+ &#39;ani ideal presiden fitnahan bulian love ani baswedan semoga presiden aaamiin &#39;,
+ &#39;surpey abal abalga &#39;,
+ &#39;otak atik kejutan 2024 kaget &#39;,
+ &#39;insyaallah keluarga pilih ganjar dipasangkan dengan andika perkasa ganjar andika yang terbaik keutuhan nkri melanjutkan program deh jokowi &#39;,
+ &#39;berharap yang gandeng mahfud capr cawapr &#39;,
+ &#39;tau indik survei nya sih survei nya asli turun kelapangan enggak ya &#39;,
+ &#39;fret ahso iyeh utak atik gatuk mileni kecewa dibatalkannya tuan rumah piala dunia u20gara2 poli tiku pdip yang sok cari muka &#39;,
+ &#39;saya dukung tgb &#39;,
+ &#39;kawal prabowo podium 1 2024 &#39;,
+ &#39;prabowo subianto erick thohir &#39;,
+ &#39;ani is the best &#39;,
+ &#39;pakai prabowo perpasangan dengan ganjarnanti akibatnya indonesia maju bidang olah ragakarena ganjar enggak senang dengan olah raga khusunya persepak bola an indonesia &#39;,
+ &#39;kejadian politiknya bang2024 ri 1 ganjar eric &#39;,
+ &#39;pilih prabowo presiden jangan wakil jangan pasangan dengan pdi &#39;,
+ &#39;kecewa ganjar pranowo gara-gara sepak bola batal &#39;,
+ &#39;fix prabowo &#39;,
+ &#39;ani tetef yuk pilih ani perubahan kalau perubahan ani top markotop &#39;,
+ &#39;pengamat petam petnah pa cocok mleset prote hubungi aku &#39;,
+ &#39;prabowo gobran tolong sm ku diviralkan kedunia aku bayi aku percaya omongan pengamat elit paranorm dhukun aku yaqin nubuatanku kepada gusti yesu &#39;,
+ &#39;gara-gara ganjar kaum kadrun aku bernubuat 24 prabowo gibran er i kerepan negeri aman damai sejahtera kafrun pikun yang neko-neko &#39;,
+ &#39;btp ketua kpkpak prabowo mahfud md presiden wakilpasti maju indonesia melanjutkan tuga joko widodo amin ya robbal alamin &#39;,
+ &#39;cawapr yang menarik sandiaga uno kofifah cocok capr cawapr &#39;,
+ &#39;pilih pasangan ani ahi pasangan ternistakan &#39;,
+ &#39;kecewa rk mentok cawapr beliau cerdasmend jabar 2 period saja mubadzir kepintarannya kalo wapr &#39;,
+ &#39;hahahahahha lutchu yadulu benci p prabowo cinta cie cie karena u20 gagal &#39;,
+ &#39;ahok &#39;,
+ &#39;timor timur bpk prabowo &#39;,
+ &#39;prabowo 2024 &#39;,
+ &#39;lembaga survey pesanan &#39;,
+ &#39;prabowoharga matiyang palestina saja &#39;,
+ &#39;ganjar pranowo hebattttt &#39;,
+ &#39;prabowo auranya adembeda nyapr dulujadi sekeluarga nyoblo bowo &#39;,
+ &#39;bowo bowo tidak anak bangsa &#39;,
+ &#39;begini percaya survey sudah kelewat bodohnya &#39;,
+ &#39;kalo bikin kayak hasil surv butuh dana ya dana oligarki syaratnya saja kalo bikin surv rupiah begini &#39;,
+ &#39;pendukung ganjar gqndeng prabowotapi s3karang dukung prabowoerick thohir &#39;,
+ &#39;bravo bpk prabowo erik tohir &#39;,
+ &#39;prabowo erick &#39;,
+ &#39;kemarin saya dukung ganjar berita pildun gagal ahirnya mendukung prabowo &#39;,
+ &#39;untuk pa cari tiket cari pasangan cawapr gerindra enggak ambang bata 20 untuk nyapr &#39;,
+ &#39;mbah wowo enggak ya nafsu gede tenaga &#39;,
+ &#39;prabowo pasangan dengan pdip kalah &#39;,
+ &#39;prabowo pasangan dengan mahfudmd &#39;,
+ &#39;ntt suka ganjar pdip karena pdip ganjar mempermalukan jokowi terpaksa pindah haluan prabowo subiantoini prabowo mahfud md &#39;,
+ &#39;prabowopak jokowi ri 1 &#39;,
+ &#39;pemilih jokowirencananya pilih ganjarsekarang mantap pilih prabowo &#39;,
+ &#39;warga nu cocok pprabowo &#39;,
+ &#39;bp prabowo seriyu capr mari sukseskan jangan ragu &#39;,
+ &#39;enggak suka capr yang menyusun kata-kata doang enggak kerja &#39;,
+ &#39;prabowoerick indonesia hebat &#39;,
+ &#39;harapan erick berpasangan ganjar erick merapatlah prabowo terwujud indonesia hebat maju &#39;,
+ &#39;pasangan prabowo erick bagu maju olahraga bola indonesiakita dukung &#39;,
+ &#39;presiden cocok memimpin negara indonesia kalangan tni keren &#39;,
+ &#39;kecewa ya &#39;,
+ &#39;prabowo partai lembu api insyaallah menang &#39;,
+ &#39;prabowo presiden riganjar presid palestina &#39;,
+ &#39;nasdem demokrat pk ayo bersatu pilih ani jangan takut penguasa takutlah dengan allah rakyat &#39;,
+ &#39;percaya dengan survey penguasa politik kotor tapi rakyat memilih prabowo ani penguasa enggak senang ani nkri jaya &#39;,
+ &#39;orang jatim jateng enggak yang memilih ganjar &#39;,
+ &#39;rakyat pinginnya prabowo ani penguasa takut dengan ani semoga rakyat pilih ani &#39;,
+ &#39;ani baswedan calon terbaik presid ri 2024 &#39;,
+ &#39;semoga prabowo gerindra menang pemilu 2024 &#39;,
+ &#39;ulasannya tidak &#39;,
+ &#39;enggak percaya surveyitu bayar &#39;,
+ &#39;parbowo girban &#39;,
+ &#39;kayaknya ganjar nyunsep elektabilita nya gagal piala dunia u20 netizen indonesia anak muda pencinta bola otomati isunya goreng yang memiliki ganjar &#39;,
+ &#39;orang percaya dengan endosmen sejatinya pemimpin netral capr &#39;,
+ &#39;beranilh berresiko biar ind namanya kompetisi menang kalah lah ket partai cumak kuli dorong rakyat kebagian dibuka hatinyap &#39;,
+ &#39;memingat pemilu 2019 relawan yang ditinggalkan &#39;,
+ &#39;ganjar pilih terbukti sisi &#39;,
+ &#39;prabowo nyapr jalur kibgerindrapkbani nyapr jalur perubahanganjar nyapr jalur gaza pemilihnya mayorita warga palestina &#39;,
+ &#39;prabowo erlanggaprabowo yusril mahendraprabowo erick tohir &#39;,
+ &#39;mudahpa prabowao persiden ri tahun 2024 memilih wakil pdip &#39;,
+ &#39;pendukung mahfud mdsuara nya pleas &#39;,
+ &#39;nya yang suka bola pilih prabowo &#39;,
+ &#39;nya prabowo yang melanjutkan kinerja bp jokowi 2 kali memilih jokowi memilih bp karena tau bp orang yang ihkla cinta terhadapa nkri &#39;,
+ &#39;tua istirahatlah &#39;,
+ &#39;ayo gembosi ganjar kerja jalan pantura mangkrak &#39;,
+ &#39;ayo pendukung jokowi &#39;,
+ &#39;survey bayar yang membayar mahal urutan yang &#39;,
+ &#39;prabowo airlangga prabowo erick thohirmantan jender ahli ekonomiyg kadrun irasionalwan abud bahlul robot sih chaplin sih bewok &#39;,
+ &#39;ganjar pranowo kuat jawa jawa timurtapi kali hancur jawa jawa timurkecewa gagalnya pildun lu 20 jawa timur penggila bola &#39;,
+ &#39;prabowoerick tohir &#39;,
+ &#39;pilih ngotot presiden tujuannya ani percayalah &#39;,
+ &#39;koster ganjar for 2024 wkwkwk &#39;,
+ &#39;sayatidak prabowo gagal 3 kali bro pemilih bosan &#39;,
+ &#39;ganjar payahmulai kadrun &#39;,
+ &#39;nilai sinyal arahan koment 1 ganjar sandiunoridwankhofifahahy2 prabowo aniskhofifahsandi3 ani khofifahridwanericksandikalo pembicaraan present &#39;,
+ &#39;temanggung jateng dukung penuh pakai anissaja wapresnya &#39;,
+ &#39;acep tabl ganjar rusak sungguh sayang &#39;,
+ &#39;ya jangan putra2 terbaik wakil inya allah menang pilpr cari wakil pencinta timna indonesia terpukul kecewa berat indonesia negara sedih putra2 terbaik hilang pekerjaan tk prabowo &#39;,
+ &#39;prabowo mahfud putaran &#39;,
+ &#39;tidak percay dengan lembaga survey kemarin survey onlin teman klik ganjar bisa masuk teman lagi klik prabowo bisa masuk teman yang klik pakani enggak bisa masuk &#39;,
+ &#39;boikot pk pdip 2024 menggagalkan piala dunia &#39;,
+ &#39;calon yang elektabilita nya gagasan menekan kemiskinan memberanta korupsiyg ambisi presiden ujung2nya kongkalikong mafiacukong korupsi dimana mnkecuali mahfud md &#39;,
+ &#39;gabungan parpol calon yang menarik kepercayaan rakyat &#39;,
+ &#39;gerindra yang menang pilpr 2024 &#39;,
+ &#39;nya prabowo presiden ganjar yosef ani enggak pnta mimpin nkri &#39;,
+ &#39;jabar bp perabowo 90 &#39;,
+ &#39;saya 2024 nanti gerindra urutan saya orang jw dulu pendukung pdi saya sama-sama penggemar bola sejawa sudah sepakat tidak memilih pdi &#39;,
+ &#39;perabowo pemimpin kitaganjar musuh rakyat indonesia &#39;,
+ &#39;surv sok pintar jatim bilang pdip kuat bohong nenek 2 enggak peduli wg cilik &#39;,
+ &#39;enggak dipilih semuagak enggak untungnya sama keluarga cari kerja repot sembako mahal uang pajak male sama bangsat2 koruptor selesai &#39;,
+ &#39;raportnya prestasinya bagu nyata band capr prabowo &#39;,
+ &#39;prabowomahfud mdbisa pilihan &#39;,
+ &#39;pilih moncong putihbagi haram hukumnya &#39;,
+ &#39;ganjar pdip no way &#39;,
+ &#39;prabowo gandeng dengan gp kader partai penggag pildun u20 golputt &#39;,
+ &#39;aniesahi &#39;,
+ &#39;2024 dukung prabowomakhfud md presiden wakil presiden &#39;,
+ &#39;percaya tukang ramall &#39;,
+ &#39;prabowomah saja cocok &#39;,
+ &#39;jar wo josss &#39;,
+ &#39;terserah ganjar &#39;,
+ &#39;sudah niat pilih ganjartapi gara-gara piala dunia batal selenggarakan indonesia enggak jadi yang pilih &#39;,
+ &#39;nama anak mudah ke kabenet kotal solo tera nomer calon presiden rakyat dipeleh calon persiden assalam mualaikum &#39;,
+ &#39;paprabowo presiden ku &#39;,
+ &#39;pilihan ku p r a b o gue 0 &#39;,
+ &#39;prabowo mahfud md josss &#39;,
+ &#39;prabowo sandi &#39;,
+ &#39;survey dari manaprabowo srharusnya pringkat satuganjar terakirlah &#39;,
+ &#39;sumatra suara prabowo &#39;,
+ &#39;prabowo eriktohirmantaaaap &#39;,
+ &#39;kalo prabowo menang berpasangan ganjarsaya pnggmar spakbolaal ini prabowo &#39;,
+ &#39;bapakprabowosayataudulusayadipucakbogordiapunyakebunbarattamansafariaminsehat2pjumursehat &#39;,
+ &#39;prabowo eriq ajalah &#39;,
+ &#39;gerindra menang apa prabowo presiden indonesia jaya jaya jaya &#39;,
+ &#39;jangan pilih pdip partai pembohong &#39;,
+ &#39;prabowo perpasangan pdi &#39;,
+ &#39;berbahaya indonesia kuasai sih pembual usung trio partai busuk menguasai stasiun stasiun tv konten konten hoax hasut fitnahnya medso propagandanya waspadai gerombolan &#39;,
+ &#39;sefei bayaran lihat ani kunjungan rame tidak sambako parbowo dipapua sembako &#39;,
+ &#39;setuju prabowo berduet basuki mentri pupr kayaknya cocok &#39;,
+ &#39;berpikir ganjar petuga partai pdip berkutik mak banteng mempengaruhi kebijaksanaan presiden namanya petuga partai &#39;,
+ &#39;ani 2024 r 1 amin &#39;,
+ &#39;prabowo laku lagi &#39;,
+ &#39;pilih ani jadikan negara islam biar kaum peci demo berjaya &#39;,
+ &#39;prabowo jokowi &#39;,
+ &#39;prabowo gibra &#39;,
+ &#39;inlahsalahsatusurvey abalabalyangtidakjelasdananya &#39;,
+ &#39;ogah pilih prabowo katanya timbul tenggelam rakyat prabowo yang umbul rakyat yang tenggelam &#39;,
+ &#39;ani baswedan yang presiden 2024 &#39;,
+ &#39;ogah pilih pakai wokarna baucendana hatilah salah pilih yang sudah susah payah pakai jokowi kerja kera negara indonesia maju ahkirnya berantakan &#39;,
+ &#39;presiden menindak mencegah tindakan oknum oknum merugikan negara bangun sehinnga memoerbesar celah korupsi membangun orang uang hasil hutang coorporasi ase ujung ujungnya menambah beban negara &#39;,
+ &#39;genjer loyal jokowipecinta bolatimna u20 mengingkari keputusannya sendirilupakan genjer 2024 &#39;,
+ &#39;ani situyul yaman ganjar sikoclok jauhkan panggung pilpr &#39;,
+ &#39;lembaga survei bayaranaslinya ani yang tertinggi &#39;,
+ &#39;lupakan ganjar anisfoku bp prabowo subianto &#39;,
+ &#39;kuat mendukung ganjar pranowo berani menolak kehadiran tim zioni israel setuju dengan pre erdogan turkiy fifa menerapkan standar ganda melarang tim russia karena menganeksasi ukrain membiarkan tim israel yang menjajah palestina &#39;,
+ &#39;kawatir ganjar aku sekeluarga mendukungmu pencalonan kepala desa 2024 tapi kalau pencalonan presiden tawar sekeluarga coblo bpk prabowo subianto &#39;,
+ &#39;prabowo pasangan gibran &#39;,
+ &#39;aaahhmasak siihhhbetulkah ituqta pilihan khususlohh &#39;,
+ &#39;setuju prabowo presiden ri tahun depn jagan berpasangan ganjar &#39;,
+ &#39;setuju prabowo vs erik tohir jiwa dan kesediplinanya sama-sama kuat &#39;,
+ &#39;pilih prabowo &#39;,
+ &#39;capr 2024 andai prabowo sandingkan dengan tokoh tokoh kalangan nu insyaallah memenangkan pemilu nu basi yang &#39;,
+ &#39;prb0w0 prb0w0 prb0w0 prb0w0 bosan yang ngecalonin enggak yang kah semoga kalah terlalau berambisi bagu &#39;,
+ &#39;pilih calon presidenyg cerdasjujur bicara komitmen dipertanggung jawabkan &#39;,
+ &#39;prabowo waktunyainsyaallahaamiin &#39;,
+ &#39;prabowo eric tohir cocok &#39;,
+ &#39;kalimantan barat 999 pilih prabowo ganjar memilih ane ulama orang ase pendatang indonesia ngatur2 indonesia bisa2 hancur nkri ani presiden &#39;,
+ &#39;noganjar jateng &#39;,
+ &#39;tenggelamkn pdip stop presiden wayang partai &#39;,
+ &#39;pakai ani insyaallah menang karena yang tidak di butuhkan &#39;,
+ &#39;maunya pahlawan tolak israel bumerang pecinta bola kakimsyarakat laki-laki indonesia 70 pecinta bola kaki &#39;,
+ &#39;mari menybelih banteng korban raya idhul adhaagar menyeruduk menabrak anak-anak bangsa &#39;,
+ &#39;kalo bp prabowo sama hofifah enggak lawan &#39;,
+ &#39;indonesia timur prabowo &#39;,
+ &#39;israel ditolak prabowo diterima &#39;,
+ &#39;khofifah saja &#39;,
+ &#39;assalamualaikum wbkalo fikir hikmahnya indonesia menolak israel fifa konsekuen israel salah dilindungissya salah yang pro kontra indonesia rasakan kehendak allah swt rakyat indonesia penjajahan dimuka bumi hapuskan manusia damai bumi indonesia berdoa berjuang khusu nya palestina semoga allah swt mengabulkan merdeka diakui pbb ya allah swt lingkunganilah kaum yang tertinda berikanlah kekuatan lepaskan penderitaanamin ya rabbal alamin &#39;,
+ &#39;ani pilihan utamauntuk capr &#39;,
+ &#39;prabowo erick keren &#39;,
+ &#39;ani baswedan presiden 2024 &#39;,
+ &#39;rakyat indonesia menggagalkan piala dunia &#39;,
+ ...]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span> <span class="o">=</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">documents_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;2513x5517 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 19942 stored elements in Compressed Sparse Row format&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="perform-svd">
+<h2>perform SVD<a class="headerlink" href="#perform-svd" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the number of topics or components</span>
+<span class="n">num_components</span><span class="o">=</span><span class="mi">10</span>
+
+<span class="c1"># Create SVD object</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">num_components</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Fit SVD model on data</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+
+<span class="c1"># Get Singular values and Components </span>
+<span class="n">Sigma</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">singular_values_</span> 
+<span class="n">V_transpose</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">components_</span><span class="o">.</span><span class="n">T</span>
+<span class="n">V_transpose</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 4.11332097e-04, -6.97790420e-04, -8.47412481e-04, ...,
+         1.37765442e-03, -8.36872830e-04,  9.20944237e-04],
+       [ 4.03357961e-04,  1.78998634e-04,  2.39832363e-04, ...,
+        -4.60909452e-04,  4.16426111e-04,  1.04469860e-04],
+       [ 4.03357961e-04,  1.78998634e-04,  2.39832363e-04, ...,
+        -4.60909452e-04,  4.16426111e-04,  1.04469860e-04],
+       ...,
+       [ 4.17202515e-04,  1.28549729e-04, -1.37391099e-04, ...,
+        -1.03855950e-03,  5.61001149e-04, -2.88861868e-03],
+       [ 1.90621074e-03, -4.32787145e-04, -1.61125839e-03, ...,
+        -4.43248573e-06,  2.86903841e-03, -1.82769340e-03],
+       [ 5.23958605e-04, -9.91441526e-05, -1.54199735e-04, ...,
+         9.19143231e-04,  3.61152950e-03, -7.63164336e-04]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the topics with their terms</span>
+<span class="n">terms</span> <span class="o">=</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span> 
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">component</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">components_</span><span class="p">):</span>
+    <span class="n">zipped</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">terms</span><span class="p">,</span> <span class="n">component</span><span class="p">)</span>
+    <span class="n">top_terms_key</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">zipped</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">top_terms_list</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">top_terms_key</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;: &quot;</span><span class="p">,</span><span class="n">top_terms_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topic 0:  [&#39;prabowo&#39;, &#39;ganjar&#39;, &#39;presiden&#39;, &#39;ani&#39;, &#39;2024&#39;]
+Topic 1:  [&#39;mahfud&#39;, &#39;prabowo&#39;, &#39;md&#39;, &#39;erick&#39;, &#39;tohir&#39;]
+Topic 2:  [&#39;ani&#39;, &#39;presiden&#39;, &#39;2024&#39;, &#39;baswedan&#39;, &#39;ri&#39;]
+Topic 3:  [&#39;mahfud&#39;, &#39;md&#39;, &#39;survey&#39;, &#39;ani&#39;, &#39;enggak&#39;]
+Topic 4:  [&#39;survey&#39;, &#39;yang&#39;, &#39;percaya&#39;, &#39;prabowo&#39;, &#39;enggak&#39;]
+Topic 5:  [&#39;ani&#39;, &#39;prabowo&#39;, &#39;tohir&#39;, &#39;erik&#39;, &#39;mantap&#39;]
+Topic 6:  [&#39;pilih&#39;, &#39;pdip&#39;, &#39;yang&#39;, &#39;jangan&#39;, &#39;partai&#39;]
+Topic 7:  [&#39;2024&#39;, &#39;pdip&#39;, &#39;no&#39;, &#39;survey&#39;, &#39;pilih&#39;]
+Topic 8:  [&#39;pilih&#39;, &#39;presiden&#39;, &#39;survey&#39;, &#39;enggak&#39;, &#39;ganjar&#39;]
+Topic 9:  [&#39;erik&#39;, &#39;tohir&#39;, &#39;no&#39;, &#39;pdip&#39;, &#39;presiden&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Tugas_Pagerank.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pagerank</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import">import</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crawl-komentar-dari-youtube">Crawl Komentar dari YouTube</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-text">Clean Text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenize">Tokenize</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword">stopword</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slank-word">Slank Word</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-svd">perform SVD</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alief Akbar Purnama
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
