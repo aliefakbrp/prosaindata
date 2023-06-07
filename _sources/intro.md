@@ -1,3 +1,4 @@
-Proyek Sain Data
-Alief Akbar Purnama 200411100154
+# Proyek Sain Data
+## Alief Akbar Purnama 200411100154
+## Apa itu Data Science
 Data science adalah ilmu yang menggabungkan matematika, statisika dengan ilmu komputer dengan tujuan analisa data (data analysis) dari suatu himpunan data baik skala kecil (sampel) maupun besar (populasi) dengan mengaplikasikan algoritma tertentu untuk tujuan menggali data (data mining) dan mendapatkan pola data serta dapat melakukan prediksi data (prediction) dengan cukup akurat yang dapat membantu dalam pengambilan keputusan dan dapat digunakan untuk membuat sistem yang cerdas (AI) yang dapat terus belajar dengan sendirinya (machine learning).
